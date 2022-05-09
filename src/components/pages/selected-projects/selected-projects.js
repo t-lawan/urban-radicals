@@ -1,12 +1,20 @@
-import React from 'react';
-import { SelectedProjectsWrapper } from './selected-projects.styles';
+import React from "react"
+import { SelectedProjectsWrapper } from "./selected-projects.styles"
+import PropTypes  from "prop-types"
+import ProjectList from "../../project-list/project-list"
 
-const SelectedProjects = () => {
-	return (
-		<SelectedProjectsWrapper>   
-            <p> Selected Project List </p>
-		</SelectedProjectsWrapper>
-	);
-};
+const SelectedProjects = (props) => {
 
-export default SelectedProjects;
+
+  return (
+    <SelectedProjectsWrapper>
+      <ProjectList projects={props.projects} />
+    </SelectedProjectsWrapper>
+  )
+}
+
+SelectedProjects.propTypes = {
+	projects: PropTypes.arrayOf(PropTypes.object).isRequired,
+  }
+
+export default SelectedProjects

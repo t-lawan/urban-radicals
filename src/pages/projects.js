@@ -7,7 +7,7 @@ import SelectedProjects from "../components/pages/selected-projects/selected-pro
 import { Convert } from "../utils/convert"
 
 
-const IndexPage = () => {
+const ProjectPage = () => {
   const { allContentfulProject } = useStaticQuery(
     graphql`
       query {
@@ -47,11 +47,11 @@ const IndexPage = () => {
   )
   return (
   <Layout>
-    <Seo title="Home" />
+    <Seo title="All Projects" />
     <SelectedProjects projects={projects}/>
 
   </Layout>
   );
 }
 
-export default IndexPage
+export default ProjectPage

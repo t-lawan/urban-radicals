@@ -5,15 +5,14 @@ export class ProjectModel {
     slug;
     location;
     date;
-    thumbnailImage;
     contentSections;
+    category;
 
-    seoTitle;
-    seoDescription;
+    seo;
 
 
 
-    constructor(id, title, description, slug, location, date, thumbnailImage, contentSections, seoTitle, seoDescription) {
+    constructor(id, title, description, slug, category, location, date, contentSections, seo) {
         this.title = title;
         this.id = id;
         this.description = description;
@@ -21,10 +20,17 @@ export class ProjectModel {
         // this.mainVideo = mainVideo;
         this.location = location;
         this.date = date;
-        this.thumbnailImage = thumbnailImage;
         this.contentSections = contentSections;
+        this.category = category;
 
-        this.seoTitle = seoTitle;
-        this.seoDescription = seoDescription;
+        this.seo = seo;
+    }
+
+    getCategory = () => {
+        return this.category.title;
+    }
+
+    getYear = () => {
+        return new Date(this.date).getFullYear()
     }
 }
