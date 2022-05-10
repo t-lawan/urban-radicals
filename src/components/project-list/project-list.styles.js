@@ -9,6 +9,9 @@ export const ProjectListRow = styled.div`
     display:grid;
     grid-template-columns: 2fr 5fr;
     width: 100%;
+    :hover {
+        color: ${props => props.colour};
+    }
 `
 
 export const ProjectListWrapper = styled.div`

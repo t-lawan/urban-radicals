@@ -1,13 +1,12 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-
 import Layout from "../components/layout/layout"
 import Seo from "../components/seo/seo"
-import SelectedProjects from "../components/pages/selected-projects/selected-projects"
 import { Convert } from "../utils/convert"
+import ProjectsPage from "../components/pages/projects/projects-page"
 
 
-const ProjectPage = () => {
+const Projects = () => {
   const { allContentfulProject } = useStaticQuery(
     graphql`
       query {
@@ -48,10 +47,10 @@ const ProjectPage = () => {
   return (
   <Layout>
     <Seo title="All Projects" />
-    <SelectedProjects projects={projects}/>
+    <ProjectsPage projects={projects} /> 
 
   </Layout>
   );
 }
 
-export default ProjectPage
+export default Projects

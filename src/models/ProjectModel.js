@@ -30,6 +30,10 @@ export class ProjectModel {
         return this.category.title;
     }
 
+    getCategoryColour = () => {
+        return this.category.colour;
+    }
+
     getYear = () => {
         return new Date(this.date).getFullYear()
     }

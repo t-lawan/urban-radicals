@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <NavbarWrapper>
         <NavbarLink to={PageMap.HOME.slug}> selected projects</NavbarLink>
-        <NavbarLink to={PageMap.HOME.slug}> ALL PROJECTS </NavbarLink>
+        <NavbarLink to={PageMap.PROJECTS.slug}> ALL PROJECTS </NavbarLink>
         <NavbarLink to={PageMap.ABOUT.slug}> about</NavbarLink>
     </NavbarWrapper>
   )

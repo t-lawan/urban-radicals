@@ -12,7 +12,7 @@ const ProjectList = (props) => {
   return (
     <ProjectListWrapper>
         {projects.map((project, index) =>(
-            <ProjectListRow key={index}>
+            <ProjectListRow colour={project.getCategoryColour()} key={index}>
                 <p>{project.getCategory()}</p>
                 <p>{`${project.title}, ${project.location}, ${project.getYear()}`}</p>
             </ProjectListRow>
