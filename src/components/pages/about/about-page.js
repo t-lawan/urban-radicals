@@ -1,16 +1,22 @@
 import React from "react"
 import { AboutPageWrapper } from "./about-page.styles"
+import PropTypes from "prop-types"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import { generateContentBlock, richTextOptions } from "../../../utils/richtext"
 
-const AboutPage = () => {
+const AboutPage = (props) => {
+  let page = props.page;
+  console.log("PAGE", page)
+
   return (
     <AboutPageWrapper>
-      <p>
-        Since then, the studio has grown organically through projects,
-        competitions, parties, dinners, fishing trips, gardening, stories,
-        painting, cooking, workshops, walks, gatherings and conversations.
-      </p>
+      {page.content.map((block, index) => generateContentBlock(block, index))}
     </AboutPageWrapper>
   )
+}
+
+AboutPage.propTypes = {
+  page: PropTypes.object,
 }
 
 export default AboutPage

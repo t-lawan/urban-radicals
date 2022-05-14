@@ -31,6 +31,7 @@ export class ProjectModel {
     }
 
     getCategoryColour = () => {
+        console.log('this.category.colour',this.category.colour)
         return this.category.colour;
     }
 

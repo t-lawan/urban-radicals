@@ -1,3 +1,5 @@
+import { ContentBoxModel } from "../models/ContentModel";
+import { PageModel } from "../models/PageModel";
 import { ProjectCategoryModel } from "../models/ProjectCategoryModel";
 import { ProjectModel } from "../models/ProjectModel";
 import { SeoModel } from "../models/SEOModel";
@@ -18,6 +20,15 @@ export class Convert {
         )
     }
 
+
+	static toContentModel = (contentfulModel) => {
+		return new ContentBoxModel(
+			contentfulModel.text,
+			null,
+			null
+		)
+	}
+
     static toSEOModel = (contentfulModel) => {
         return new SeoModel(
 			contentfulModel.contentful_id,
@@ -26,6 +37,18 @@ export class Convert {
 			// contentfulModel.image ? contentfulModel.image : null,
         )
     }
+
+	static toPageModel = (contentfulModel) => {
+		let content = [];
+		contentfulModel.content.forEach((content_block) => {
+			content.push(this.toContentModel(content_block));
+		})
+		return new PageModel(
+			contentfulModel.contentful_id,
+			contentfulModel.title,
+			content,
+		)
+	}
 
     static toProjectCategoryModel = (contentfulModel) => {
         return new ProjectCategoryModel(

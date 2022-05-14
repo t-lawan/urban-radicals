@@ -72,6 +72,7 @@ padding-top: 0;
 font-size: 1.5rem;
 line-height: 1.15;
 font-style: normal;
+color: black;
 @media screen and (min-width: ${size.laptopL}) {
   font-size: 2.25rem;
   ${"" /* font-size: 2rem; */}
