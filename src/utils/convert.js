@@ -39,7 +39,6 @@ export class Convert {
 
 
 	static toContentModel = (contentfulModel) => {
-		console.log('YY', contentfulModel)
 		return new ContentBoxModel(
 			contentfulModel.text,
 			contentfulModel.images,

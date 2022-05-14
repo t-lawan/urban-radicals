@@ -75,12 +75,12 @@ const IndexPage = () => {
     Convert.toSelectedProjectModel
   )
 
-  console.log('XX', projects)
+  // console.log('XX', projects)
 
   return (
     <Layout>
       <Seo title="Home" />
-      {/* <SelectedProjects projects={projects} /> */}
+      <SelectedProjects projects={projects} />
     </Layout>
   )
 }
