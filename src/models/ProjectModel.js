@@ -5,14 +5,14 @@ export class ProjectModel {
     slug;
     location;
     date;
-    contentSections;
+    content;
     category;
 
     seo;
 
 
 
-    constructor(id, title, description, slug, category, location, date, contentSections, seo) {
+    constructor(id, title, description, slug, category, location, date, content, seo) {
         this.title = title;
         this.id = id;
         this.description = description;
@@ -20,7 +20,7 @@ export class ProjectModel {
         // this.mainVideo = mainVideo;
         this.location = location;
         this.date = date;
-        this.contentSections = contentSections;
+        this.content = content;
         this.category = category;
 
         this.seo = seo;
@@ -31,7 +31,6 @@ export class ProjectModel {
     }
 
     getCategoryColour = () => {
-        console.log('this.category.colour',this.category.colour)
         return this.category.colour;
     }
 

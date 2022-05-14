@@ -1,24 +1,24 @@
 export class ContentBoxModel {
     text;
-    image;
     images;
+    image_collection;
     type;
 
-    constructor(text, image, images){
+    constructor(text, images, image_collection){
 
         this.text = text;
-        this.image = image;
         this.images = images;
+        this.image_collection = image_collection;
 
         if(this.text){
             this.type = ContentBoxType.TEXT_BLOCK
         }
 
-        if(this.image){
-            this.image = ContentBoxType.IMAGE_BLOCK
+        if(this.images){
+            this.type = ContentBoxType.IMAGE_BLOCK
         }
 
-        if(this.images){
+        if(this.image_collection){
             this.type = ContentBoxType.IMAGE_COLLECTION_BLOCK
         }
 
@@ -29,5 +29,5 @@ export class ContentBoxModel {
 export const ContentBoxType = {
     TEXT_BLOCK: 'TEXT_BLOCK',
     IMAGE_BLOCK: 'IMAGE_BLOCK',
-    IMAGE_COLLECTION_BLOCK: 'IMAGES_BLOCK',
+    IMAGE_COLLECTION_BLOCK: 'IMAGE_COLLECTION_BLOCK',
 }

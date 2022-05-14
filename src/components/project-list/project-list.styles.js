@@ -2,7 +2,8 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 export const ProjectLink = styled(Link)`
-
+    text-decoration: none;
+    width: 100%;
 `
 
 export const ProjectListRow = styled.div`

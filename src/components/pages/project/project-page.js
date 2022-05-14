@@ -1,12 +1,20 @@
 import React from 'react';
 import { ProjectPageWrapper } from './project-page.styles';
+import PropTypes from "prop-types"
+import { generateContentBlock } from '../../../utils/richtext';
 
-const ProjectPage = () => {
+const ProjectPage = (props) => {
+	let project = props.project;
 	return (
 		<ProjectPageWrapper>   
-            <p> Single Project Page </p>
+     		{project.content.map((block, index) => generateContentBlock(block, index))}
+
 		</ProjectPageWrapper>
 	);
 };
+
+ProjectPage.propTypes = {
+	project: PropTypes.object,
+  }
 
 export default ProjectPage;

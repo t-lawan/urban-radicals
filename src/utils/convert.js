@@ -2,11 +2,18 @@ import { ContentBoxModel } from "../models/ContentModel";
 import { PageModel } from "../models/PageModel";
 import { ProjectCategoryModel } from "../models/ProjectCategoryModel";
 import { ProjectModel } from "../models/ProjectModel";
+import { SelectedProjectModel } from "../models/SelectedProjectModel";
 import { SeoModel } from "../models/SEOModel";
 
 export class Convert {
 
     static toProjectModel = (contentfulModel) => {
+		console.log(contentfulModel);
+		let content = [];
+		contentfulModel.content.forEach((content_block) => {
+			content.push(this.toContentModel(content_block));
+		})
+
         return new ProjectModel(
 			contentfulModel.contentful_id,
 			contentfulModel.title,
@@ -15,17 +22,28 @@ export class Convert {
 			this.toProjectCategoryModel(contentfulModel.category),
 			contentfulModel.location ? contentfulModel.location : '',
 			contentfulModel.date,
-            null,
+            content,
             this.toSEOModel(contentfulModel.seo)
         )
     }
 
+	static toSelectedProjectModel = (contentfulModel) => {
+		return new SelectedProjectModel(
+			contentfulModel.contentful_id,
+			this.toContentModel(contentfulModel.leftColumnImage),
+			this.toContentModel(contentfulModel.rightColumnImage),
+			this.toProjectModel(contentfulModel.project)
+
+		)
+	}
+
 
 	static toContentModel = (contentfulModel) => {
+		console.log('YY', contentfulModel)
 		return new ContentBoxModel(
 			contentfulModel.text,
-			null,
-			null
+			contentfulModel.images,
+			contentfulModel.image_collection
 		)
 	}
 

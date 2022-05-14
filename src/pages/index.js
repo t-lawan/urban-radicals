@@ -6,52 +6,83 @@ import Seo from "../components/seo/seo"
 import SelectedProjects from "../components/pages/selected-projects/selected-projects"
 import { Convert } from "../utils/convert"
 
-
 const IndexPage = () => {
-  const { allContentfulProject } = useStaticQuery(
+  const { allContentfulSelectedProject } = useStaticQuery(
     graphql`
       query {
-        allContentfulProject {
+        allContentfulSelectedProject {
           edges {
             node {
-              category {
-                contentful_id
-                colour
-                title
-              }
               contentful_id
-              date(formatString: "M/D/YYYY")
-              description {
-                raw
-              }
-              slug
-              title
-              location
-              seo {
+              leftColumnImage {
                 contentful_id
-                description {
-                  description
+                images {
+                  gatsbyImageData
+                  width
                 }
+                text {
+                  raw
+                }
+              }
+              rightColumnImage {
+                contentful_id
+                images {
+                  gatsbyImageData
+                }
+                text {
+                  raw
+                }
+              }
+              project {
+                category {
+                  contentful_id
+                  colour
+                  title
+                }
+                contentful_id
+                date(formatString: "M/D/YYYY")
+                description {
+                  raw
+                }
+                slug
                 title
+                location
+                seo {
+                  contentful_id
+                  description {
+                    description
+                  }
+                  title
+                }
+                content {
+                  contentful_id
+                  title
+                  text {
+                    raw
+                  }
+                }
               }
             }
           }
         }
       }
     `
-  )
+  );
+
 
   const projects = Convert.toModelArray(
-    allContentfulProject,
-    Convert.toProjectModel
+    allContentfulSelectedProject,
+    Convert.toSelectedProjectModel
   )
-  return (
-  <Layout>
-    <Seo title="Home" />
-    <SelectedProjects projects={projects}/>
 
-  </Layout>
-  );
+  console.log('XX', projects)
+
+  return (
+    <Layout>
+      <Seo title="Home" />
+      {/* <SelectedProjects projects={projects} /> */}
+    </Layout>
+  )
 }
 
 export default IndexPage

@@ -11,7 +11,7 @@ const ProjectTemplate = props => {
   console.log(project)
   return (
     <Layout>
-      <Seo title="Project Page" />
+      <Seo {...project.seo} />
       <ProjectPage project={project} />
     </Layout>
   )

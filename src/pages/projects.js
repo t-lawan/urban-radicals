@@ -11,31 +11,38 @@ const Projects = () => {
     graphql`
       query {
         allContentfulProject {
-          edges {
-            node {
-              category {
-                contentful_id
-                colour
-                title
-              }
-              contentful_id
-              date(formatString: "M/D/YYYY")
-              description {
-                raw
-              }
-              slug
-              title
-              location
-              seo {
-                contentful_id
-                description {
-                  description
-                }
-                title
-              }
-            }
+    edges {
+      node {
+        category {
+          contentful_id
+          colour
+          title
+        }
+        contentful_id
+        date(formatString: "M/D/YYYY")
+        description {
+          raw
+        }
+        slug
+        title
+        location
+        seo {
+          contentful_id
+          description {
+            description
+          }
+          title
+        }
+        content {
+          contentful_id
+          title
+          text {
+            raw
           }
         }
+      }
+    }
+  }
       }
     `
   )
