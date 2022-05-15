@@ -23,6 +23,7 @@ const IndexPage = () => {
                 text {
                   raw
                 }
+                layout
               }
               rightColumnImage {
                 contentful_id
@@ -32,6 +33,7 @@ const IndexPage = () => {
                 text {
                   raw
                 }
+                layout
               }
               project {
                 category {
@@ -67,8 +69,7 @@ const IndexPage = () => {
         }
       }
     `
-  );
-
+  )
 
   const projects = Convert.toModelArray(
     allContentfulSelectedProject,

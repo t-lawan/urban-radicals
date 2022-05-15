@@ -2,14 +2,15 @@ export class ContentBoxModel {
     text;
     images;
     image_collection;
+    image_layout;
     type;
 
-    constructor(text, images, image_collection){
+    constructor(text, images, image_collection, layout){
 
         this.text = text;
         this.images = images;
         this.image_collection = image_collection;
-
+        this.image_layout = layout;
         if(this.text){
             this.type = ContentBoxType.TEXT_BLOCK
         }
