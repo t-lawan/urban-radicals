@@ -50,10 +50,18 @@ export const generateContentBlock = (block, index) => {
 
 const DocumentationImage = styled(GatsbyImage)`
   width: 40%;
+  background: green;
+
 `
 
 const FullWidthImage = styled(GatsbyImage)`
+  background: green;
+`
 
+const ColouredBackground = styled.div`
+  width: 100%;
+  position: absolute;
+  height: 100%;
 `
 
 const ImageWrapper = styled.div`
