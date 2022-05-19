@@ -30,11 +30,22 @@ exports.createPages = async ({ graphql, actions }) => {
               title
             }
             content {
-              contentful_id
-              text {
-                raw
+              ... on ContentfulTextBlock {
+                contentful_id
+                title
+                text {
+                  raw
+                }
               }
-              title
+              ... on ContentfulImageBlock {
+                contentful_id
+                images {
+                  gatsbyImageData
+                }
+                text {
+                  raw
+                }
+              }
             }
           }
         }
@@ -55,4 +66,30 @@ exports.createPages = async ({ graphql, actions }) => {
       })
     })
   })
+}
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+  const typeDefs = `
+
+
+    type ContentfulTextBlock {
+      contentful_id: String!
+    }
+    type ContentfulImageBlock  {
+      contentful_id: String! 
+    }
+
+    union ContentBlock = ContentfulTextBlock | ContentfulImageBlock
+
+    type contentfulProject {
+      content: [ ContentBlock!]
+    }
+
+
+
+
+
+  `
+  createTypes(typeDefs)
 }
