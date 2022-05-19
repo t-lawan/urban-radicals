@@ -42,6 +42,7 @@ exports.createPages = async ({ graphql, actions }) => {
                 images {
                   gatsbyImageData
                 }
+                layout
                 text {
                   raw
                 }
