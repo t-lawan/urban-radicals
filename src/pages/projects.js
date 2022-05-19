@@ -45,6 +45,7 @@ const Projects = () => {
                   images {
                     gatsbyImageData
                   }
+                  layout
                   text {
                     raw
                   }
