@@ -69,6 +69,7 @@ const IndexPage = () => {
                     images {
                       gatsbyImageData
                     }
+                    layout
                     text {
                       raw
                     }
@@ -87,7 +88,6 @@ const IndexPage = () => {
     Convert.toSelectedProjectModel
   )
 
-  // console.log('XX', projects)
 
   return (
     <Layout>
