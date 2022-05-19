@@ -8,7 +8,6 @@ import { SeoModel } from "../models/SEOModel";
 export class Convert {
 
     static toProjectModel = (contentfulModel) => {
-		console.log(contentfulModel);
 		let content = [];
 		contentfulModel.content.forEach((content_block) => {
 			content.push(this.toContentModel(content_block));
