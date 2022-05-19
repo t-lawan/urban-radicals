@@ -35,6 +35,9 @@ export const generateContentBlock = (block, index) => {
         case IMAGE_LAYOUT.FULL_WIDTH:
           image_content = <FullWidthImage image={getImage(block.images[0])} alt={'IMAGE'} />
           break;
+        case IMAGE_LAYOUT.HALF_WIDTH:
+          image_content = <HalfWidthImage image={getImage(block.images[0])} alt={'IMAGE'} />
+          break;
       }
       return (
         <ImageWrapper key={index}>
@@ -47,15 +50,18 @@ export const generateContentBlock = (block, index) => {
   }
 }
 
+const Image = styled(GatsbyImage)``
 
-const DocumentationImage = styled(GatsbyImage)`
+const DocumentationImage = styled(Image)`
   width: 40%;
-  background: green;
 
 `
 
-const FullWidthImage = styled(GatsbyImage)`
-  background: green;
+const FullWidthImage = styled(Image)`
+  /* background: green; */
+`
+const HalfWidthImage = styled(Image)`
+    width: 50%;
 `
 
 const ColouredBackground = styled.div`
@@ -74,4 +80,5 @@ const ImageWrapper = styled.div`
 const IMAGE_LAYOUT = {
   DOCUMENTATION_IMAGE:"DOCUMENTATION_IMAGE",
   FULL_WIDTH: "FULL_WIDTH",
+  HALF_WIDTH: "HALF_WIDTH",
 }
