@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components"
+import Helvetica from '../assets/fonts/HelveticaNeue Regular.ttf'
 
 export const size = {
   mobileS: "320px",
@@ -11,6 +12,13 @@ export const size = {
 }
 
 export const GlobalStyle = createGlobalStyle`
+
+@font-face {
+  font-family: "Helvetica";
+  src: url(${Helvetica}) format('truetype');
+  font-display: block;
+}
+
 * {
     box-sizing: border-box;
     }  
@@ -21,6 +29,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   word-wrap: break-word;
+font-family: 'Helvetica', sans-serif;
+
 }
 h1,h2,h3,h4,h5,h6 {
     margin-left: 0;
