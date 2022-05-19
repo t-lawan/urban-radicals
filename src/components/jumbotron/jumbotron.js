@@ -6,8 +6,8 @@ const Jumbotron = () => {
     <JumbotronWrapper>
       <p>
         {" "}
-        URBAN RADICALS started out in 2019 as a duo between architects NASIOS
-        VARNAVAS and ERA SAVVIDES with the ambition to form an expansive network
+        URBAN RADICALS started out in 2019 as a duo between architects <span> NASIOS VARNAVAS </span>
+         and ERA SAVVIDES with the ambition to form an expansive network
         between friends, colleagues and expert collaborators, to solve problems
         across contexts and scales.{" "}
       </p>

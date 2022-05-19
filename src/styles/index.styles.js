@@ -69,7 +69,7 @@ line-height: 1.1;
 h6 {
 margin-bottom: 1.45rem;
 font-size: 0.78405rem;
-vertical-align: baseline;
+vertical-align: text-top;
 }
 p, a{
 margin-left: 0;
