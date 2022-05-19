@@ -12,7 +12,6 @@ const ProjectList = props => {
   projects.sort((a, b) => {
     return new Date(a.date).getTime() - new Date(b.date).getTime()
   })
-  console.log("A", projects)
 
   return (
     <ProjectListWrapper>
