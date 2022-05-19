@@ -6,7 +6,7 @@ import { generateContentBlock, richTextOptions } from "../../../utils/richtext"
 
 const AboutPage = (props) => {
   let page = props.page;
-  console.log("PAGE", page)
+
 
   return (
     <AboutPageWrapper>
