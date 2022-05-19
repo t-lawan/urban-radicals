@@ -57,10 +57,21 @@ const IndexPage = () => {
                   title
                 }
                 content {
-                  contentful_id
-                  title
-                  text {
-                    raw
+                  ... on ContentfulTextBlock {
+                    contentful_id
+                    title
+                    text {
+                      raw
+                    }
+                  }
+                  ... on ContentfulImageBlock {
+                    contentful_id
+                    images {
+                      gatsbyImageData
+                    }
+                    text {
+                      raw
+                    }
                   }
                 }
               }
