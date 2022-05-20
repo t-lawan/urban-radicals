@@ -18,7 +18,7 @@ const ProjectList = props => {
       {projects.map((project, index) => (
         <ProjectLink key={index} to={`${PageMap.PROJECT.slug}/${project.slug}`}>
           <ProjectListRow  colour={project.getCategoryColour()}>
-            <p>{project.getCategory()}</p>
+            <p>{project.getCategory().toLowerCase()}</p>
             <p>{`${project.title}, ${
               project.location
             }, ${project.getYear()}`}</p>
