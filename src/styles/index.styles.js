@@ -43,7 +43,7 @@ h1,h2,h3,h4,h5,h6 {
 } 
 h1 {
 margin-bottom: 1.45rem;
-font-size: 2.5rem;
+font-size: 2.375rem;
 line-height: 1.1;
 }
 h2 {
@@ -80,7 +80,7 @@ padding-bottom: 0;
 padding-left: 0;
 padding-right: 0;
 padding-top: 0;
-font-size: 1.5rem;
+font-size: 1.8392rem;
 line-height: 1.15;
 font-style: normal;
 color: black;
