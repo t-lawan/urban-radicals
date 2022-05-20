@@ -4,11 +4,12 @@ import styled from 'styled-components';
 export const ProjectLink = styled(Link)`
     text-decoration: none;
     width: 100%;
+    margin: 0;
 `
 
 export const ProjectListRow = styled.div`
     display:grid;
-    grid-template-columns: 2fr 5fr;
+    grid-template-columns: 2fr 6fr;
     width: 100%;
     :hover {
         > * {
