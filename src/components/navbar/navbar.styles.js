@@ -4,6 +4,7 @@ import styled from 'styled-components';
 export const NavbarLink = styled(Link)`
     text-transform: ${props => props.selected ? "uppercase": "lowercase"}; 
     text-decoration: none;
+    vertical-align: ${props => props.selected ? "text-top": "baseline"};
 `
 
 export const NavbarWrapper = styled.div`
@@ -12,4 +13,5 @@ export const NavbarWrapper = styled.div`
     flex-direction: row;
     justify-content: space-around;
     align-items: baseline;
+    padding: 1rem 0;
 `;
