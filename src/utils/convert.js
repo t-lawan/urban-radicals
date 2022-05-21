@@ -4,6 +4,7 @@ import { ProjectCategoryModel } from "../models/ProjectCategoryModel";
 import { ProjectModel } from "../models/ProjectModel";
 import { SelectedProjectModel } from "../models/SelectedProjectModel";
 import { SeoModel } from "../models/SEOModel";
+import { SiteModel } from "../models/SiteModel";
 
 export class Convert {
 
@@ -33,6 +34,15 @@ export class Convert {
 			this.toContentModel(contentfulModel.rightColumnImage),
 			this.toProjectModel(contentfulModel.project)
 
+		)
+	}
+
+	static toSiteModel = (contentfulModel) => {
+		return new SiteModel(
+			contentfulModel.contentful_id,
+			contentfulModel.title,
+			contentfulModel.jumbotronText,
+			this.toSEOModel(contentfulModel.seo)
 		)
 	}
 
