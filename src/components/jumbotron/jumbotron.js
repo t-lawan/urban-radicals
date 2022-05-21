@@ -1,16 +1,26 @@
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
+import { richTextOptions } from "../../utils/richtext"
 import { JumbotronWrapper } from "./jumbotron.styles"
 
 const Jumbotron = () => {
+  const { contentfulSite } = useStaticQuery(
+    graphql`
+      query {
+        contentfulSite {
+          jumbotronText {
+            raw
+          }
+        }
+      }
+    `
+  )
+
+  console.log("JUMBOTRON", contentfulSite.jumbotronText)
   return (
     <JumbotronWrapper>
-      <h1>
-        {" "}
-        URBAN RADICALS started out in 2019 as a duo between architects NASIOS VARNAVAS 
-         and ERA SAVVIDES with the ambition to form an expansive network
-        between friends, colleagues and expert collaborators, to solve problems
-        across contexts and scales.{" "}
-      </h1>
+      {documentToReactComponents(JSON.parse(contentfulSite.jumbotronText.raw), richTextOptions)}
     </JumbotronWrapper>
   )
 }
