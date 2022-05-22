@@ -17,7 +17,6 @@ const Jumbotron = () => {
     `
   )
 
-  console.log("JUMBOTRON", contentfulSite.jumbotronText)
   return (
     <JumbotronWrapper>
       {documentToReactComponents(JSON.parse(contentfulSite.jumbotronText.raw), richTextOptions)}
