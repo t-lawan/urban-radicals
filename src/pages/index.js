@@ -7,72 +7,71 @@ import SelectedProjects from "../components/pages/selected-projects/selected-pro
 import { Convert } from "../utils/convert"
 
 const IndexPage = () => {
-  const { allContentfulSelectedProject } = useStaticQuery(
+  const { contentfulSite } = useStaticQuery(
     graphql`
       query {
-        allContentfulSelectedProject {
-          edges {
-            node {
+        contentfulSite {
+          contentful_id
+          selectedProjects {
+            contentful_id
+            leftColumnImage {
               contentful_id
-              leftColumnImage {
-                contentful_id
-                images {
-                  gatsbyImageData
-                  width
-                }
-                text {
-                  raw
-                }
-                layout
+              images {
+                gatsbyImageData
+                width
               }
-              rightColumnImage {
-                contentful_id
-                images {
-                  gatsbyImageData
-                }
-                text {
-                  raw
-                }
-                layout
+              text {
+                raw
               }
-              project {
-                category {
-                  contentful_id
-                  colour
-                  title
-                }
+              layout
+            }
+            rightColumnImage {
+              contentful_id
+              images {
+                gatsbyImageData
+              }
+              text {
+                raw
+              }
+              layout
+            }
+            project {
+              category {
                 contentful_id
-                date(formatString: "M/D/YYYY")
-                description {
-                  raw
-                }
-                slug
+                colour
                 title
-                location
-                seo {
-                  contentful_id
-                  description {
-                    description
-                  }
-                  title
+              }
+              contentful_id
+              date(formatString: "M/D/YYYY")
+              description {
+                raw
+              }
+              slug
+              title
+              location
+              seo {
+                contentful_id
+                description {
+                  description
                 }
-                content {
-                  ... on ContentfulTextBlock {
-                    contentful_id
-                    title
-                    text {
-                      raw
-                    }
+                title
+              }
+              content {
+                ... on ContentfulTextBlock {
+                  contentful_id
+                  title
+                  text {
+                    raw
                   }
-                  ... on ContentfulImageBlock {
-                    contentful_id
-                    images {
-                      gatsbyImageData
-                    }
-                    layout
-                    text {
-                      raw
-                    }
+                }
+                ... on ContentfulImageBlock {
+                  contentful_id
+                  images {
+                    gatsbyImageData
+                  }
+                  layout
+                  text {
+                    raw
                   }
                 }
               }
@@ -83,11 +82,10 @@ const IndexPage = () => {
     `
   )
 
-  const projects = Convert.toModelArray(
-    allContentfulSelectedProject,
-    Convert.toSelectedProjectModel
-  )
 
+  let projects = contentfulSite.selectedProjects.map(project => {
+    return Convert.toSelectedProjectModel(project)
+  })
 
   return (
     <Layout>
