@@ -7,7 +7,6 @@ import { generateContentBlock } from "../../../utils/richtext"
 const SelectedProjects = (props) => {
 
   let selectedProjectsArray = props.projects;
-  console.log(selectedProjectsArray)
   return (
     <SelectedProjectsWrapper>
       {selectedProjectsArray.map((project, index) => (
