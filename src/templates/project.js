@@ -8,6 +8,7 @@ import { Convert } from "../utils/convert"
 
 const ProjectTemplate = props => {
   const project = Convert.toProjectModel(props.pageContext)
+
   return (
     <Layout>
       <Seo {...project.seo} />
