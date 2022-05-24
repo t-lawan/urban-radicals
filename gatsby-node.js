@@ -46,6 +46,25 @@ exports.createPages = async ({ graphql, actions }) => {
                 text {
                   raw
                 }
+                caption {
+                  caption
+                }
+              }
+              ... on ContentfulImageCollectionBlock {
+                id
+                imageList {
+                  contentful_id
+                  images {
+                    gatsbyImageData
+                  }
+                  layout
+                  text {
+                    raw
+                  }
+                  caption {
+                    caption
+                  }
+                }
               }
             }
           }
@@ -80,8 +99,11 @@ exports.createSchemaCustomization = ({ actions }) => {
     type ContentfulImageBlock  {
       contentful_id: String! 
     }
+    type ContentfulImageCollectionBlock  {
+      contentful_id: String! 
+    }
 
-    union ContentBlock = ContentfulTextBlock | ContentfulImageBlock
+    union ContentBlock = ContentfulTextBlock | ContentfulImageBlock | ContentfulImageCollectionBlock
 
     type contentfulProject {
       content: [ ContentBlock!]
