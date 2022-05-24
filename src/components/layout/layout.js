@@ -4,12 +4,14 @@ import { GlobalStyle } from "../../styles/index.styles"
 import { LayoutWrapper, MainWrapper } from "./layout.styles"
 import Jumbotron from "../jumbotron/jumbotron"
 import Navbar from "../navbar/navbar"
+import Modal from "../modal/modal"
+
 
 const Layout = props => {
   return (
     <LayoutWrapper>
       <GlobalStyle />
-
+      <Modal />
       {props.showJumbotronText ? <Jumbotron /> : null}
       <Navbar />
       <MainWrapper> {props.children} </MainWrapper>
