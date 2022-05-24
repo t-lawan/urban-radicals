@@ -51,7 +51,7 @@ export class Convert {
 		return new ContentBoxModel(
 			contentfulModel.text,
 			contentfulModel.images,
-			contentfulModel.image_collection,
+			contentfulModel.imageList,
 			contentfulModel.layout,
 		)
 	}
