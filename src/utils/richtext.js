@@ -5,6 +5,7 @@ import { ContentBoxType } from "../models/ContentModel"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Convert } from "./convert"
+import ImageCollectionItem from "../components/image-collection-item/image-collection-item"
 
 const EXTERNALLINK = styled.a``
 export const richTextOptions = {
@@ -35,22 +36,19 @@ export const generateContentBlock = (block, index) => {
       return generateImageBlock(block, index)
     case ContentBoxType.IMAGE_COLLECTION_BLOCK:
       let imageCollection = block.image_collection;
-      console.log(imageCollection)
       return (
-        <>
-          {imageCollection.map((img, index) => (
-            <ImageCollectionItemWrapper>
-              {generateImageBlock(img, img.contentful_id)}
-            </ImageCollectionItemWrapper>
+        <React.Fragment key={index}>
+          {imageCollection.map((img, ind) => (
+            <ImageCollectionItem key={ind} imageBlock={img} index={index} />
           ))}
-        </>
+        </React.Fragment>
       )
     default:
       return <></>
   }
 }
 
-const generateImageBlock = (block, index) => {
+export const generateImageBlock = (block, index) => {
   let image_content
   switch (block.image_layout) {
     case IMAGE_LAYOUT.DOCUMENTATION_IMAGE:
