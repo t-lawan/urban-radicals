@@ -3,7 +3,7 @@ import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-re
 import { ImageCarouselWrapper } from "./image-carousel.styles";
 
 
-const ImageCarousel = () => {
+const ImageCarousel = (props) => {
 
     return (
         <ImageCarouselWrapper>
