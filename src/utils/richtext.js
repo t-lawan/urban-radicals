@@ -39,7 +39,7 @@ export const generateContentBlock = (block, index) => {
       return (
         <React.Fragment key={index}>
           {imageCollection.map((img, ind) => (
-            <ImageCollectionItem key={ind} imageBlock={img} index={index} />
+            <ImageCollectionItem key={ind} imageCollection={imageCollection} imageBlock={img} imageIndex={ind} />
           ))}
         </React.Fragment>
       )
