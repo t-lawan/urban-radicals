@@ -1,11 +1,11 @@
 import React from 'react';
 import { ModalWrapper } from './modal.styles';
 import { connect } from 'react-redux';
-import { hideModal, showModal } from '../../store/actions';
+import { hideModal } from '../../store/actions';
 
 const Modal = (props) => {
     const closeModal = () => {
-        props.hideModal();
+        // props.hideModal();
     }
     return (
         <ModalWrapper onClick={() => closeModal()} show={props.show_modal}>
@@ -16,7 +16,6 @@ const Modal = (props) => {
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		showModal: () => dispatch(showModal()),
 		hideModal: () => dispatch(hideModal())
 	};
 };
