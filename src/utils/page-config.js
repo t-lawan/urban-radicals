@@ -17,3 +17,8 @@ export const PageMap = {
     },
 
 }
+
+export const ModalElementType = {
+    PROJECT_PAGE: 'PROJECT_PAGE',
+    IMAGE_CAROUSEL: 'IMAGE_CAROUSEL'
+}
