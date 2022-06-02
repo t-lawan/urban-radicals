@@ -4,10 +4,16 @@ export const SelectedProjectsWrapper = styled.div`/* padding: 1rem;
   max-height: 100vh;
   max-width: 100vw; */`;
 
+export const SelectedProjectRowItemWrapper = styled.div`
+  /* padding: 0.5rem; */
+`
 export const SelectedProjectRow = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  flex-direction: row;
+  display: flex;
   padding: 1rem 0;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
   :hover {
     > * > * {
       /* opacity: .5; */

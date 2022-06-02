@@ -8,6 +8,6 @@ export const ModalWrapper = styled.div`
     top: 0;
     left: 0;
     z-index: 50;
-    background: red;
+    background: white;
     overflow-y: hidden;
 `

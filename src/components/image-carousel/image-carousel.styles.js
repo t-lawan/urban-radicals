@@ -21,6 +21,7 @@ export const ImageWrapper = styled.div`
     align-items: center;
     width: 100%;
     height: 100%;
+    background: rgba(255,0,0, 5);
 
 `
 export const ImageCarouselWrapper = styled.div`
@@ -34,13 +35,14 @@ export const StyledCarouselProvider = styled(CarouselProvider)`
 
 export const StyledSlider = styled(Slider)`
     width: 100%;
-    height: 85%;
+    height: 85vh;
     border: 3px solid black;
 
 `   
 
 export const StyledSlide = styled(Slide)`
-
+    /* width: 100%;
+    height: 85vh; */
 `
 
 export const StyledButtonBack = styled(ButtonBack)`
@@ -55,11 +57,11 @@ background: transparent;
 
 export const CarouselFooter = styled.div`
     width: 100%;
-    bottom: 0;
-    position: absolute;
     display: grid;
     grid-template-columns: 1fr 5fr 1fr;
     height: 15vh;
+background: transparent;
+
 `
 
 export const ImageCaption = styled.div`

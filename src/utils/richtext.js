@@ -49,27 +49,33 @@ export const generateContentBlock = (block, index) => {
 }
 
 export const generateImageBlock = (block, index) => {
-  let image_content
+  let image_content;
+  let width;
   switch (block.image_layout) {
     case IMAGE_LAYOUT.DOCUMENTATION_IMAGE:
       let image = getImage(block.images[0])
+      width = '40%'
       image_content = <DocumentationImage image={image} alt={"IMAGE"} />
       break
     case IMAGE_LAYOUT.FULL_WIDTH:
+      width = '100%'
       image_content = (
         <FullWidthImage image={getImage(block.images[0])} alt={"IMAGE"} />
       )
       break
     case IMAGE_LAYOUT.HALF_WIDTH:
+      width = '50%'
       image_content = (
         <HalfWidthImage image={getImage(block.images[0])} alt={"IMAGE"} />
       )
       break
   }
   return (
-    <ImageWrapper key={index}>
+    <ImageWrapper width={width} key={index}>
       {image_content}
-      {documentToReactComponents(JSON.parse(block.text.raw), richTextOptions)}
+      <ImageCaption>
+        {documentToReactComponents(JSON.parse(block.text.raw), richTextOptions)}
+      </ImageCaption>
     </ImageWrapper>
   )
 }
@@ -77,14 +83,15 @@ export const generateImageBlock = (block, index) => {
 const Image = styled(GatsbyImage)``
 
 const DocumentationImage = styled(Image)`
-  width: 40%;
+
+  border: 3px solid black;
 `
 
 const FullWidthImage = styled(Image)`
   /* background: green; */
 `
 const HalfWidthImage = styled(Image)`
-  width: 50%;
+  /* width: 50%; */
 `
 
 const ColouredBackground = styled.div`
@@ -98,10 +105,15 @@ const ImageWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: ${props => props.width};
 `
 
 const ImageCollectionItemWrapper = styled.div`
 
+`
+
+const ImageCaption = styled.div`
+  align-self: flex-start;
 `
 
 const IMAGE_LAYOUT = {

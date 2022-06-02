@@ -57,7 +57,7 @@ const ImageCarousel = props => {
           {props.imageCollection.map((image, index) => (
             <StyledSlide key={index} index={index}>
               <ImageWrapper>
-                <Image image={getImage(image.images[0])} objectFit={'contain'} />
+                <Image image={getImage(image.images[0])} objectFit={'contain'} alt={'image'}/>
               </ImageWrapper>
             </StyledSlide>
           ))}

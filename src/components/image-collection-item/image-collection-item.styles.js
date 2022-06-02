@@ -5,7 +5,10 @@ export const ImageCollectionItemWrapper = styled.div`
 `
 
 export const ImageItemWrapper = styled.div`
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 `
 
 export const Modal = styled.div`
