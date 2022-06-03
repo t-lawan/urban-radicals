@@ -41,8 +41,8 @@ export const StyledSlider = styled(Slider)`
 `   
 
 export const StyledSlide = styled(Slide)`
-    /* width: 100%;
-    height: 85vh; */
+    width: 100%;
+    height: 100%;
 `
 
 export const StyledButtonBack = styled(ButtonBack)`
