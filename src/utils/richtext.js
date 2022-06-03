@@ -73,9 +73,12 @@ export const generateImageBlock = (block, index) => {
   return (
     <ImageWrapper width={width} key={index}>
       {image_content}
-      <ImageCaption>
+      {block.text ? (
+        <ImageCaption>
         {documentToReactComponents(JSON.parse(block.text.raw), richTextOptions)}
       </ImageCaption>
+      ): null}
+
     </ImageWrapper>
   )
 }
