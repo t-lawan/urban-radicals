@@ -21,10 +21,23 @@ const About = () => {
             }
           }
           content {
-            text {
-              raw
+            ... on ContentfulTextBlock {
+              contentful_id
+              title
+              text {
+                raw
+              }
             }
-            title
+            ... on ContentfulImageBlock {
+              contentful_id
+              images {
+                gatsbyImageData
+              }
+              layout
+              text {
+                raw
+              }
+            }
           }
         }
       }
