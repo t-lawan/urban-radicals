@@ -48,10 +48,11 @@ const ImageCarousel = props => {
   return (
     <ImageCarouselWrapper>
       <StyledCarouselProvider
-        naturalSlideWidth={1000}
-        naturalSlideHeight={1000}
+        naturalSlideWidth={100}
+        naturalSlideHeight={125}
         totalSlides={imageCollection.length}
         currentSlide={imageIndex}
+        isIntrinsicHeight={true}
       >
         <StyledSlider>
           {props.imageCollection.map((image, index) => (
