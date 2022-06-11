@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { size } from '../../../styles/index.styles';
 
 export const SelectedProjectsWrapper = styled.div`/* padding: 1rem;
   max-height: 100vh;
@@ -14,6 +15,10 @@ export const SelectedProjectRow = styled.div`
   gap: 1rem;
   justify-content: center;
   align-items: center;
+  margin-bottom: calc(var(--large-size-desktop)* 3.5);
+  @media screen and (max-width: ${size.mobileL}) {
+    margin-bottom: calc(var(--large-size-mobile)* 3.5);
+  }
   :hover {
     > * > * {
       /* opacity: .5; */

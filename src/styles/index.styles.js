@@ -1,5 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components"
-import Helvetica from '../assets/fonts/HelveticaNeue Regular.ttf'
+import Helvetica from "../assets/fonts/HelveticaNeue Regular.ttf"
 
 export const size = {
   mobileS: "320px",
@@ -17,6 +17,15 @@ export const GlobalStyle = createGlobalStyle`
   font-family: "Helvetica";
   src: url(${Helvetica}) format('truetype');
   font-display: block;
+}
+
+:root {
+  --large-size-desktop: 34px;
+  --large-size-mobile: 28px;
+  --medium-size-desktop: 24px;
+  --medium-size-mobile: 22px;
+  --small-size-desktop: 16px;
+  --small-size-mobile: 14px;
 }
 
 * {
@@ -45,16 +54,28 @@ h1 {
 margin-bottom: 1.45rem;
 font-size: 2.375rem;
 line-height: 1.1;
+font-size: var(--large-size-desktop);
+  @media screen and (max-width: ${size.mobileL}) {
+    font-size: var(--large-size-mobile);
+  }
 }
 h2 {
 margin-bottom: 1.45rem;
 font-size: 1.6rem;
 line-height: 1.1;
+font-size: var(--large-size-desktop) * 0.9;
+  @media screen and (max-width: ${size.mobileL}) {
+    font-size: var(--large-size-mobile) * 0.9;
+  }
 }
 h3 {
 margin-bottom: 1.45rem;
 font-size: 1.3rem;
 line-height: 1.1;
+font-size: var(--large-size-desktop) * 0.8;
+  @media screen and (max-width: ${size.mobileL}) {
+    font-size: var(--large-size-mobile) * 0.8;
+  }
 }
 h4 {
 margin-bottom: 1.45rem;
@@ -84,15 +105,10 @@ font-size: 1.8392rem;
 line-height: 1.15;
 font-style: normal;
 color: black;
-@media screen and (min-width: ${size.laptopL}) {
-  font-size: 2.25rem;
-  ${"" /* font-size: 2rem; */}
-
-	}
-@media screen and (max-width: ${size.tablet}) {
-  font-size: 1.25rem;
-
-	}
+font-size: var(--medium-size-desktop);
+  @media screen and (max-width: ${size.mobileL}) {
+    font-size: var(--medium-size-mobile);
+  }
 
 }
   `

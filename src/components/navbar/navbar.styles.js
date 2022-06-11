@@ -1,5 +1,6 @@
 import { Link } from 'gatsby';
 import styled from 'styled-components';
+import { size } from '../../styles/index.styles';
 
 export const NavbarLink = styled(Link)`
     text-transform: ${props => props.selected ? "uppercase": "lowercase"}; 
@@ -14,5 +15,8 @@ export const NavbarWrapper = styled.div`
     flex-direction: row;
     justify-content: space-around;
     align-items: baseline;
-    padding: 1rem 0;
+    padding: var(--large-size-desktop) 0;
+  @media screen and (max-width: ${size.mobileL}) {
+    font-size: var(--large-size-mobile) 0;
+  }
 `;

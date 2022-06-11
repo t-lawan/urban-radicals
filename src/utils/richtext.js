@@ -6,6 +6,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Convert } from "./convert"
 import ImageCollectionItem from "../components/image-collection-item/image-collection-item"
+import { size } from "../styles/index.styles"
 
 const EXTERNALLINK = styled.a``
 export const richTextOptions = {
@@ -86,7 +87,11 @@ export const generateImageBlock = (block, index) => {
 const Image = styled(GatsbyImage)``
 
 const DocumentationImage = styled(Image)`
-
+  padding: 7px 0;
+  padding: calc(var(--large-size-desktop)/4) 0;
+  @media screen and (max-width: ${size.mobileL}) {
+    font-size: calc(var(--large-size-desktop)/4) 0;
+  }
   border: 3px solid black;
 `
 
@@ -117,6 +122,11 @@ const ImageCollectionItemWrapper = styled.div`
 
 const ImageCaption = styled.div`
   align-self: flex-start;
+  padding: 21px 0;
+  padding: calc((var(--large-size-desktop)* 3)/4) 0;
+  @media screen and (max-width: ${size.mobileL}) {
+    font-size: calc((var(--large-size-desktop)* 3)/4) 0;
+  }
 `
 
 const IMAGE_LAYOUT = {
