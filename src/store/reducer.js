@@ -4,10 +4,8 @@ import * as ActionTypes from "./actions"
 const initalState = {
   showModal: false,
   modalElement: null,
-  modalElementType: null,
-  modalProject: null,
-  modalCarouselImages: [],
-  modalCarouselImageIndex: 0
+  modalProps: {},
+
 }
 
 const reducer = (state = initalState, action) => {
@@ -16,27 +14,13 @@ const reducer = (state = initalState, action) => {
       return Object.assign({}, state, {
         showModal: true,
         modalElement: action.modalElement,
-        modalElementType: null
+        modalProps: action.modelElementProps
       })
-    case ActionTypes.SHOW_MODAL_PROJECT:
-      return Object.assign({}, state, {
-        showModal: true,
-        modalProject: action.modalProject,
-        modalElementType: ModalElementType.PROJECT_PAGE
-      })
-    case ActionTypes.SHOW_MODAL_CAROUSEL:
-        return Object.assign({}, state, {
-          showModal: true,
-          modalCarouselImages: action.modalCarouselImages,
-          modalCarouselImageIndex: action.modalCarouselImageIndex,
-          modalElementType: ModalElementType.IMAGE_CAROUSEL
-        })
     case ActionTypes.HIDE_MODAL:
       return Object.assign({}, state, {
         showModal: false,
         modalElement: null,
-        modalCarouselImages: [],
-        modalElementType: null
+        modalProps: {}
 
       })
 

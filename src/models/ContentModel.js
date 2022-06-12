@@ -6,8 +6,9 @@ export class ContentBoxModel {
   image_collection
   image_layout
   type
+  image_caption
 
-  constructor(text, images, image_collection, layout) {
+  constructor(text, images, image_collection, layout, image_caption = null) {
     this.text = text
     this.images = images
     if (image_collection) {
@@ -17,6 +18,8 @@ export class ContentBoxModel {
     }
 
     this.image_layout = layout
+    this.image_caption = image_caption;
+    
     if (this.text) {
       this.type = ContentBoxType.TEXT_BLOCK
     }

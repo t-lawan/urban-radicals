@@ -53,6 +53,7 @@ export class Convert {
 			contentfulModel.images,
 			contentfulModel.imageList,
 			contentfulModel.layout,
+			contentfulModel.caption ? contentfulModel.caption.caption : null
 		)
 	}
 

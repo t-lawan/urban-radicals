@@ -90,13 +90,15 @@ const DocumentationImage = styled(Image)`
   padding: 7px 0;
   padding: calc(var(--large-size-desktop)/4) 0;
   @media screen and (max-width: ${size.mobileL}) {
-    font-size: calc(var(--large-size-desktop)/4) 0;
+    padding: calc(var(--large-size-desktop)/4) 0;
   }
   border: 3px solid black;
 `
 
+
 const FullWidthImage = styled(Image)`
   /* background: green; */
+
 `
 const HalfWidthImage = styled(Image)`
   /* width: 50%; */
@@ -114,6 +116,10 @@ const ImageWrapper = styled.div`
   align-items: center;
   justify-content: center;
   width: ${props => props.width};
+  margin-top: calc(var(--large-size-desktop));
+  @media screen and (max-width: ${size.mobileL}) {
+    margin-top: calc(var(--large-size-desktop));
+  }
 `
 
 const ImageCollectionItemWrapper = styled.div`

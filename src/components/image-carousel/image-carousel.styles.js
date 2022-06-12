@@ -23,8 +23,8 @@ export const StyledCarouel = styled(Carousel)`
 `
 
 export const Image = styled(GatsbyImage)`
-    /* width: 80%;
-    max-height: 80%; */
+    width: 80%;
+    max-height: 80%;
 
 `
 
@@ -35,7 +35,8 @@ export const ImageWrapper = styled.div`
     align-items: center;
     width: 100%;
     height: 100%;
-    background: rgba(255,0,0, 5);
+    border: 3px solid black;
+
 
 `
 export const ImageCarouselWrapper = styled.div`
@@ -66,11 +67,14 @@ export const StyledSlide = styled(Slide)`
 export const StyledButtonBack = styled(ButtonBack)`
 background: transparent;
     border: 0;
+    font-weight: bold;
 `
 
 export const StyledButtonNext= styled(ButtonNext)`
 background: transparent;
     border: 0;
+    font-weight: bold;
+
 `
 
 export const CarouselFooter = styled.div`

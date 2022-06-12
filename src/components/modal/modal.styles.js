@@ -11,3 +11,7 @@ export const ModalWrapper = styled.div`
     background: white;
     overflow-y: hidden;
 `
+
+export const ModalCloseButton = styled.div`
+
+`

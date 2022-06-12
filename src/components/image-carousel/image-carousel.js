@@ -13,7 +13,7 @@ import {
   StyledCarouselProvider,
   StyledSlide,
   StyledSlider,
-  StyledCarouel
+  StyledCarouel,
 } from "./image-carousel.styles"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { richTextOptions } from "../../utils/richtext"
@@ -59,46 +59,29 @@ const ImageCarousel = props => {
           {props.imageCollection.map((image, index) => (
             <StyledSlide key={index} index={index}>
               <ImageWrapper>
-                <Image image={getImage(image.images[0])} objectFit={'cover'} alt={'image'}/>
-                <p> HELLO</p>
+                <Image
+                  image={getImage(image.images[0])}
+                  objectFit={"cover"}
+                  alt={"image"}
+                />
               </ImageWrapper>
             </StyledSlide>
           ))}
         </StyledSlider>
         <CarouselFooter>
           <StyledButtonBack onClick={() => moveToPreviousImage()}>
-            <p>Previous </p>
+            <p>previous </p>
           </StyledButtonBack>
           <ImageCaption>
-            {imageCollection.length > 0
-              ? documentToReactComponents(
-                  JSON.parse(imageCollection[imageIndex].text.raw),
-                  richTextOptions
-                )
-              : null}
+            {imageCollection.length > 0 ? (
+              <p> {imageCollection[imageIndex].image_caption} </p>
+            ) : null}
           </ImageCaption>
           <StyledButtonNext onClick={() => moveToNextImage()}>
-            <p>Next </p>
+            <p>next </p>
           </StyledButtonNext>
         </CarouselFooter>
       </StyledCarouselProvider>
-      {/* <StyledCarouel
-          showThumbs={false}
-          showArrows={false}
-          showIndicators={false}
-          showStatus={false}
-          centerMode={false}
-          swipeable={false}
-          stopOnHover={true}
-          dynamicHeight={false}
-          infiniteLoop={false}
-          autoPlay={false}>
-          {props.imageCollection.map((image, index) => (
-            <ImageWrapper key={index}>
-                <Image image={getImage(image.images[0])} objectFit={'contain'} alt={'image'}/>
-            </ImageWrapper>
-          ))}
-      </StyledCarouel> */}
     </ImageCarouselWrapper>
   )
 }

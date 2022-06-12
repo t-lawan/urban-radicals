@@ -49,6 +49,9 @@ const Projects = () => {
                   text {
                     raw
                   }
+                  caption {
+                    caption
+                  }
                 }
               }
             }
