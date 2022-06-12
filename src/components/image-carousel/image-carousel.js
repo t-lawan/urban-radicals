@@ -13,6 +13,7 @@ import {
   StyledCarouselProvider,
   StyledSlide,
   StyledSlider,
+  StyledCarouel
 } from "./image-carousel.styles"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { richTextOptions } from "../../utils/richtext"
@@ -48,8 +49,8 @@ const ImageCarousel = props => {
   return (
     <ImageCarouselWrapper>
       <StyledCarouselProvider
-        naturalSlideWidth={100}
-        naturalSlideHeight={125}
+        naturalSlideWidth={1920}
+        naturalSlideHeight={1080}
         totalSlides={imageCollection.length}
         currentSlide={imageIndex}
         isIntrinsicHeight={true}
@@ -58,7 +59,8 @@ const ImageCarousel = props => {
           {props.imageCollection.map((image, index) => (
             <StyledSlide key={index} index={index}>
               <ImageWrapper>
-                <Image image={getImage(image.images[0])} objectFit={'contain'} alt={'image'}/>
+                <Image image={getImage(image.images[0])} objectFit={'cover'} alt={'image'}/>
+                <p> HELLO</p>
               </ImageWrapper>
             </StyledSlide>
           ))}
@@ -80,6 +82,23 @@ const ImageCarousel = props => {
           </StyledButtonNext>
         </CarouselFooter>
       </StyledCarouselProvider>
+      {/* <StyledCarouel
+          showThumbs={false}
+          showArrows={false}
+          showIndicators={false}
+          showStatus={false}
+          centerMode={false}
+          swipeable={false}
+          stopOnHover={true}
+          dynamicHeight={false}
+          infiniteLoop={false}
+          autoPlay={false}>
+          {props.imageCollection.map((image, index) => (
+            <ImageWrapper key={index}>
+                <Image image={getImage(image.images[0])} objectFit={'contain'} alt={'image'}/>
+            </ImageWrapper>
+          ))}
+      </StyledCarouel> */}
     </ImageCarouselWrapper>
   )
 }
