@@ -25,6 +25,7 @@
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-redux": "^8.0.1",
+    "react-responsive-carousel": "^3.2.23",
     "redux": "^4.2.0",
     "styled-components": "^5.3.5"
   },
