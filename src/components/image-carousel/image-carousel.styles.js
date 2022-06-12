@@ -6,12 +6,26 @@ import {
     ButtonBack,
     ButtonNext,
   } from "pure-react-carousel"
+import { Carousel } from "react-responsive-carousel"
+
 import { GatsbyImage } from "gatsby-plugin-image"
 
 
+export const StyledCarouel = styled(Carousel)`
+  background: transparent;
+
+  .carousel .slide {
+    background: transparent;
+    list-style-type: none;
+  }
+  margin-bottom: 2rem;
+
+`
+
 export const Image = styled(GatsbyImage)`
-    width: 80%;
-    max-height: 80%;
+    /* width: 80%;
+    max-height: 80%; */
+
 `
 
 export const ImageWrapper = styled.div`
@@ -31,13 +45,17 @@ export const ImageCarouselWrapper = styled.div`
 export const StyledCarouselProvider = styled(CarouselProvider)`
     width: 100vw;
     height: 100vh;
+
+
 `
 
 export const StyledSlider = styled(Slider)`
     width: 100%;
     height: 85vh;
     border: 3px solid black;
-
+    .carousel__slider-tray-wrapper, .carousel__slider-tray{
+        height: 100%;
+    }
 `   
 
 export const StyledSlide = styled(Slide)`
