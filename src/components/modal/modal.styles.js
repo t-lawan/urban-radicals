@@ -12,6 +12,11 @@ export const ModalWrapper = styled.div`
     overflow-y: hidden;
 `
 
-export const ModalCloseButton = styled.div`
+export const ModalCloseButton = styled.p`
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-weight: bold;
+    z-index: 60;
 
 `
