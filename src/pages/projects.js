@@ -18,7 +18,7 @@ const Projects = () => {
                 title
               }
               contentful_id
-              date(formatString: "M/D/YYYY")
+              date(formatString: "DD/MM/YYYY")
               description {
                 raw
               }
@@ -51,6 +51,22 @@ const Projects = () => {
                   }
                   caption {
                     caption
+                  }
+                }
+                ... on ContentfulImageCollectionBlock {
+                  id
+                  imageList {
+                    contentful_id
+                    images {
+                      gatsbyImageData
+                    }
+                    layout
+                    text {
+                      raw
+                    }
+                    caption {
+                      caption
+                    }
                   }
                 }
               }
