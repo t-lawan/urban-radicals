@@ -29,8 +29,6 @@ const ImageCarousel = props => {
   }, [])
 
   const moveToPreviousImage = () => {
-    console.log("moveToPreviousImage")
-    console.log(imageCollection)
 
     if (imageIndex > 0) {
       SetImageIndex(imageIndex - 1)
@@ -38,9 +36,6 @@ const ImageCarousel = props => {
   }
 
   const moveToNextImage = () => {
-    console.log(imageCollection)
-
-    console.log("moveToPreviousImage")
     if (imageIndex < imageCollection.length - 1) {
       SetImageIndex(imageIndex + 1)
     }
