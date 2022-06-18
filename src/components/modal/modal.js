@@ -25,10 +25,10 @@ const Modal = (props) => {
     return (
         <ModalWrapper show={props.show_modal}>
             <ModalCloseButton onClick={() => closeModal()}> close </ModalCloseButton>
-             <Suspense fallback={<div>Loading...</div>}>
+             {/* <Suspense fallback={<div>Loading...</div>}> */}
              {ModalElement ? <ModalElement {...props.modalProps} /> : null}
 
-             </Suspense>
+             {/* </Suspense> */}
         </ModalWrapper>
     )
 }
