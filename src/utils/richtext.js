@@ -26,12 +26,12 @@ export const generateContentBlock = (block, index) => {
   switch (block.type) {
     case ContentBoxType.TEXT_BLOCK:
       return (
-        <React.Fragment key={index}>
+        <TextBlock key={index}>
           {documentToReactComponents(
             JSON.parse(block.text.raw),
             richTextOptions
           )}
-        </React.Fragment>
+        </TextBlock>
       )
     case ContentBoxType.IMAGE_BLOCK:
       return generateImageBlock(block, index)
@@ -87,15 +87,20 @@ export const generateImageBlock = (block, index) => {
 const Image = styled(GatsbyImage)``
 
 const DocumentationImage = styled(Image)`
-  padding: 7px 0;
-  padding: calc(var(--large-size-desktop)/4) 0;
+  /* padding: 7px 0; */
+  margin-top: calc(var(--large-size-desktop)/4);
   @media screen and (max-width: ${size.mobileL}) {
-    padding: calc(var(--large-size-desktop)/4) 0;
+    margin-top: calc(var(--large-size-desktop)/4);
   }
   border: 3px solid black;
 `
 
-
+const TextBlock = styled.div`
+  margin-top: calc(var(--large-size-desktop));
+  @media screen and (max-width: ${size.mobileL}) {
+    margin-top: calc(var(--large-size-desktop));
+  }
+`
 const FullWidthImage = styled(Image)`
   /* background: green; */
 
