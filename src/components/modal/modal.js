@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { ModalWrapper } from './modal.styles';
+import { ModalCloseButton, ModalWrapper } from './modal.styles';
 import { connect } from 'react-redux';
 import { hideModal } from '../../store/actions';
 import { ModalComponentConfig } from '../../utils/component-config';
@@ -8,7 +8,7 @@ import Jumbotron from '../jumbotron/jumbotron';
 
 const Modal = (props) => {
     const closeModal = () => {
-        // props.hideModal();
+        props.hideModal();
     }
 
     let ModalElement;
@@ -23,7 +23,8 @@ const Modal = (props) => {
     }
 
     return (
-        <ModalWrapper onClick={() => closeModal()} show={props.show_modal}>
+        <ModalWrapper show={props.show_modal}>
+            <ModalCloseButton onClick={() => closeModal()}> close </ModalCloseButton>
              <Suspense fallback={<div>Loading...</div>}>
              {ModalElement ? <ModalElement {...props.modalProps} /> : null}
 
