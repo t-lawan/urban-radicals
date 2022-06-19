@@ -11,11 +11,12 @@ const Modal = (props) => {
         props.hideModal();
     }
 
-    let ModalElement;
+    let ModalElement = null;
 
     switch(props.modalElement) {
         case ModalComponentConfig.IMAGE_CAROUSEL:
-            ModalElement = React.lazy(() => import('../image-carousel/image-carousel'));
+            // ModalElement = React.lazy(() => import('../image-carousel/image-carousel'));
+            ModalElement = (<ImageCarousel {...props.modalProps} />)
             break;
         default:
             // ModalElement = (<p></p>);
@@ -26,7 +27,7 @@ const Modal = (props) => {
         <ModalWrapper show={props.show_modal}>
             <ModalCloseButton onClick={() => closeModal()}> close </ModalCloseButton>
              {/* <Suspense fallback={<div>Loading...</div>}> */}
-             {ModalElement ? <ModalElement {...props.modalProps} /> : null}
+             {ModalElement}
 
              {/* </Suspense> */}
         </ModalWrapper>
