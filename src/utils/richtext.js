@@ -51,7 +51,8 @@ export const generateContentBlock = (block, index) => {
 
 export const generateImageBlock = (block, index) => {
   let image_content;
-  let width;
+  let width = '100%';
+  let height = 'auto';
   switch (block.image_layout) {
     case IMAGE_LAYOUT.DOCUMENTATION_IMAGE:
       let image = getImage(block.images[0])
@@ -70,9 +71,40 @@ export const generateImageBlock = (block, index) => {
         <HalfWidthImage image={getImage(block.images[0])} alt={"IMAGE"} />
       )
       break
+    case IMAGE_LAYOUT.FULL_LANDSCAPE:
+      width= '100%';
+      image_content = (
+        <FullLandscape image={getImage(block.images[0])} alt={"IMAGE"} />
+      )
+      break;
+    case IMAGE_LAYOUT.FULL_PORTRAIT:
+      height = '100%';
+      image_content = (
+        <FullPortrait image={getImage(block.images[0])} alt={"IMAGE"} />
+      )
+      break;
+    case IMAGE_LAYOUT.THREE_COLUMN_LANDSCAPE:
+        width = '60%';
+        image_content = (
+          <ThreeColumnLandscape image={getImage(block.images[0])} alt={"IMAGE"} />
+        )
+        break;
+    case IMAGE_LAYOUT.TWO_COLUMN_LANDSCAPE:
+        width = '40%';
+        image_content = (
+          <TwoColumnLandscape image={getImage(block.images[0])} alt={"IMAGE"} />
+        )
+        break;
+    case IMAGE_LAYOUT.TWO_COLUMN_PORTRAIT:
+        width = '40%';
+        height = '100%';
+        image_content = (
+          <TwoColumnPortrait image={getImage(block.images[0])} alt={"IMAGE"} />
+        )
+        break;
   }
   return (
-    <ImageWrapper width={width} key={index}>
+    <ImageWrapper width={width} height={height} key={index}>
       {image_content}
       {block.text ? (
         <ImageCaption>
@@ -103,8 +135,27 @@ const TextBlock = styled.div`
 `
 const FullWidthImage = styled(Image)`
   /* background: green; */
-
 `
+const FullLandscape = styled(Image)`
+  /* background: green; */
+`
+
+const FullPortrait = styled(Image)`
+  /* background: green; */
+`
+
+const TwoColumnLandscape = styled(Image)`
+  /* background: green; */
+`
+
+const TwoColumnPortrait = styled(Image)`
+  /* background: green; */
+`
+
+const ThreeColumnLandscape = styled(Image)`
+  /* background: green; */
+`
+
 const HalfWidthImage = styled(Image)`
   /* width: 50%; */
 `
@@ -144,4 +195,14 @@ const IMAGE_LAYOUT = {
   DOCUMENTATION_IMAGE: "DOCUMENTATION_IMAGE",
   FULL_WIDTH: "FULL_WIDTH",
   HALF_WIDTH: "HALF_WIDTH",
+
+  FULL_LANDSCAPE: "FULL_LANDSCAPE",
+  FULL_PORTRAIT : "FULL_PORTRAIT",
+
+  THREE_COLUMN_LANDSCAPE: 'THREE_COLUMN_LANDSCAPE',
+
+  TWO_COLUMN_PORTRAIT: 'TWO_COLUMN_PORTRAIT',
+  TWO_COLUMN_LANDSCAPE: 'TWO_COLUMN_LANDSCAPE',
+
+
 }
