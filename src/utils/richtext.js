@@ -102,6 +102,13 @@ export const generateImageBlock = (block, index) => {
           <TwoColumnPortrait image={getImage(block.images[0])} alt={"IMAGE"} />
         )
         break;
+        case IMAGE_LAYOUT.ONE_COLUMN_PORTRAIT:
+          width = '25%';
+          height = '100%';
+          image_content = (
+            <BaseImage image={getImage(block.images[0])} alt={"IMAGE"} />
+          )
+          break;
   }
   return (
     <ImageWrapper width={width} height={height} key={index}>
@@ -132,6 +139,10 @@ const TextBlock = styled.div`
   @media screen and (max-width: ${size.mobileL}) {
     margin-top: calc(var(--large-size-desktop));
   }
+`
+
+const BaseImage = styled(Image)`
+
 `
 const FullWidthImage = styled(Image)`
   /* background: green; */
@@ -203,6 +214,7 @@ const IMAGE_LAYOUT = {
 
   TWO_COLUMN_PORTRAIT: 'TWO_COLUMN_PORTRAIT',
   TWO_COLUMN_LANDSCAPE: 'TWO_COLUMN_LANDSCAPE',
+  ONE_COLUMN_PORTRAIT: 'ONE_COLUMN_PORTRAIT'
 
 
 }
