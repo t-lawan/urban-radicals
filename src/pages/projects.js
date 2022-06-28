@@ -18,13 +18,36 @@ const Projects = () => {
                 title
               }
               contentful_id
-              date(formatString: "DD/MM/YYYY")
+              date(formatString: "MM/DD/YYYY")
               description {
                 raw
               }
               slug
               title
               location
+              footer {
+                firstColumnText {
+                  contentful_id
+                  title
+                  text {
+                    raw
+                  }
+                }
+                secondColumnText {
+                  contentful_id
+                  title
+                  text {
+                    raw
+                  }
+                }
+                thirdColumnText {
+                  contentful_id
+                  title
+                  text {
+                    raw
+                  }
+                }
+              }
               seo {
                 contentful_id
                 description {

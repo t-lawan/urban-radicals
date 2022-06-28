@@ -49,6 +49,29 @@ const IndexPage = () => {
               slug
               title
               location
+              footer {
+                firstColumnText {
+                  contentful_id
+                  title
+                  text {
+                    raw
+                  }
+                }
+                secondColumnText {
+                  contentful_id
+                  title
+                  text {
+                    raw
+                  }
+                }
+                thirdColumnText {
+                  contentful_id
+                  title
+                  text {
+                    raw
+                  }
+                }
+              }
               seo {
                 contentful_id
                 description {
@@ -81,7 +104,6 @@ const IndexPage = () => {
       }
     `
   )
-
 
   let projects = contentfulSite.selectedProjects.map(project => {
     return Convert.toSelectedProjectModel(project)

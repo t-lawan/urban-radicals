@@ -10,9 +10,11 @@ export class ProjectModel {
 
     seo;
 
+    footer;
 
 
-    constructor(id, title, description, slug, category, location, date, content, seo) {
+
+    constructor(id, title, description, slug, category, location, date, content, seo, footer) {
         this.title = title;
         this.id = id;
         this.description = description;
@@ -24,6 +26,7 @@ export class ProjectModel {
         this.category = category;
 
         this.seo = seo;
+        this.footer = footer;
     }
 
     getCategory = () => {
@@ -35,6 +38,7 @@ export class ProjectModel {
     }
 
     getYear = () => {
+        console.log(this.date)
         return new Date(this.date).getFullYear()
     }
 }

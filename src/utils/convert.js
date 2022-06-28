@@ -14,6 +14,16 @@ export class Convert {
 			content.push(this.toContentModel(content_block));
 		})
 
+		console.log(contentfulModel)
+
+
+		let footer = {
+			firstColumn: Convert.toContentModel(contentfulModel.footer.firstColumnText),
+			secondColumn: Convert.toContentModel(contentfulModel.footer.secondColumnText),
+			thirdColumn: Convert.toContentModel(contentfulModel.footer.thirdColumnText),
+		}
+
+
         return new ProjectModel(
 			contentfulModel.contentful_id,
 			contentfulModel.title,
@@ -23,7 +33,9 @@ export class Convert {
 			contentfulModel.location ? contentfulModel.location : '',
 			contentfulModel.date,
             content,
-            this.toSEOModel(contentfulModel.seo)
+            this.toSEOModel(contentfulModel.seo),
+			footer
+			
         )
     }
 

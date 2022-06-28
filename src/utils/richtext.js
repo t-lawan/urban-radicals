@@ -56,7 +56,7 @@ export const generateImageBlock = (block, index) => {
   switch (block.image_layout) {
     case IMAGE_LAYOUT.DOCUMENTATION_IMAGE:
       let image = getImage(block.images[0])
-      width = '40%'
+      width = '25%'
       image_content = <DocumentationImage image={image} alt={"IMAGE"} />
       break
     case IMAGE_LAYOUT.FULL_WIDTH:
@@ -127,47 +127,41 @@ const Image = styled(GatsbyImage)``
 
 const DocumentationImage = styled(Image)`
   /* padding: 7px 0; */
-  margin-top: calc(var(--large-size-desktop)/4);
-  @media screen and (max-width: ${size.mobileL}) {
-    margin-top: calc(var(--large-size-desktop)/4);
-  }
+  margin-top: calc(var(--large-size)/4);
   border: 3px solid black;
 `
 
 const TextBlock = styled.div`
-  margin-top: calc(var(--large-size-desktop));
-  @media screen and (max-width: ${size.mobileL}) {
-    margin-top: calc(var(--large-size-desktop));
-  }
+  margin-top: calc(var(--large-size));
 `
 
 const BaseImage = styled(Image)`
-
+  
 `
-const FullWidthImage = styled(Image)`
+const FullWidthImage = styled(BaseImage)`
   /* background: green; */
 `
-const FullLandscape = styled(Image)`
-  /* background: green; */
-`
-
-const FullPortrait = styled(Image)`
+const FullLandscape = styled(BaseImage)`
   /* background: green; */
 `
 
-const TwoColumnLandscape = styled(Image)`
+const FullPortrait = styled(BaseImage)`
   /* background: green; */
 `
 
-const TwoColumnPortrait = styled(Image)`
+const TwoColumnLandscape = styled(BaseImage)`
   /* background: green; */
 `
 
-const ThreeColumnLandscape = styled(Image)`
+const TwoColumnPortrait = styled(BaseImage)`
   /* background: green; */
 `
 
-const HalfWidthImage = styled(Image)`
+const ThreeColumnLandscape = styled(BaseImage)`
+  /* background: green; */
+`
+
+const HalfWidthImage = styled(BaseImage)`
   /* width: 50%; */
 `
 
@@ -183,10 +177,7 @@ const ImageWrapper = styled.div`
   align-items: center;
   justify-content: center;
   width: ${props => props.width};
-  margin-top: calc(var(--large-size-desktop));
-  @media screen and (max-width: ${size.mobileL}) {
-    margin-top: calc(var(--large-size-desktop));
-  }
+  margin-top: calc(var(--large-size));
 `
 
 const ImageCollectionItemWrapper = styled.div`
@@ -196,10 +187,7 @@ const ImageCollectionItemWrapper = styled.div`
 const ImageCaption = styled.div`
   align-self: flex-start;
   padding: 21px 0;
-  padding: calc((var(--large-size-desktop)* 3)/4) 0;
-  @media screen and (max-width: ${size.mobileL}) {
-    font-size: calc((var(--large-size-desktop)* 3)/4) 0;
-  }
+  padding: calc((var(--large-size)* 3)/4) 0;
 `
 
 const IMAGE_LAYOUT = {
@@ -214,7 +202,8 @@ const IMAGE_LAYOUT = {
 
   TWO_COLUMN_PORTRAIT: 'TWO_COLUMN_PORTRAIT',
   TWO_COLUMN_LANDSCAPE: 'TWO_COLUMN_LANDSCAPE',
-  ONE_COLUMN_PORTRAIT: 'ONE_COLUMN_PORTRAIT'
+  ONE_COLUMN_PORTRAIT: 'ONE_COLUMN_PORTRAIT',
+  ONE_COLUMN_LANDSCAPE: 'ONE_COLUMN_LANDSCAPE',
 
 
 }

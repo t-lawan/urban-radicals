@@ -20,7 +20,24 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 :root {
-  --large-size-desktop: 34px;
+  --large-size: 34px;
+  @media screen and (max-width: ${size.mobileL}) {
+    --large-size: 28px;
+  }
+
+  --medium-size: 24px;
+  @media screen and (max-width: ${size.mobileL}) {
+    --medium-size: 22px;
+  }
+
+  --small-size: 16px;
+  @media screen and (max-width: ${size.mobileL}) {
+    --small-size: 14px;
+  }
+
+
+
+  --large-size: 34px;
   --large-size-mobile: 28px;
   --medium-size-desktop: 24px;
   --medium-size-mobile: 22px;
@@ -54,16 +71,13 @@ h1 {
 margin-bottom: 1.45rem;
 font-size: 2.375rem;
 line-height: 1.1;
-font-size: var(--large-size-desktop);
-  @media screen and (max-width: ${size.mobileL}) {
-    font-size: var(--large-size-mobile);
-  }
+font-size: var(--large-size);
 }
 h2 {
 margin-bottom: 1.45rem;
 font-size: 1.6rem;
 line-height: 1.1;
-font-size: var(--large-size-desktop) * 0.9;
+font-size: var(--large-size) * 0.9;
   @media screen and (max-width: ${size.mobileL}) {
     font-size: var(--large-size-mobile) * 0.9;
   }
@@ -72,7 +86,7 @@ h3 {
 margin-bottom: 1.45rem;
 font-size: 1.3rem;
 line-height: 1.1;
-font-size: var(--large-size-desktop) * 0.8;
+font-size: var(--large-size) * 0.8;
   @media screen and (max-width: ${size.mobileL}) {
     font-size: var(--large-size-mobile) * 0.8;
   }

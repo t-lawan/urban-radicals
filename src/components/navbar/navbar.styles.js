@@ -15,8 +15,5 @@ export const NavbarWrapper = styled.div`
     flex-direction: row;
     justify-content: space-around;
     align-items: baseline;
-    padding: var(--large-size-desktop) 0;
-  @media screen and (max-width: ${size.mobileL}) {
-    font-size: var(--large-size-mobile) 0;
-  }
+    padding: var(--large-size) 0;
 `;

@@ -15,10 +15,7 @@ export const SelectedProjectRow = styled.div`
   gap: 1rem;
   justify-content: center;
   align-items: center;
-  margin-bottom: calc(var(--large-size-desktop)* 3.5);
-  @media screen and (max-width: ${size.mobileL}) {
-    margin-bottom: calc(var(--large-size-mobile)* 3.5);
-  }
+  margin-bottom: calc(var(--large-size)* 3.5);
   :hover {
     > * > * {
       /* opacity: .5; */
