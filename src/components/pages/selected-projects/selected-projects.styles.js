@@ -12,7 +12,7 @@ export const SelectedProjectRow = styled.div`
   flex-direction: row;
   display: flex;
   padding: 1rem 0;
-  gap: 1rem;
+  gap: var(--large-size);
   justify-content: center;
   align-items: center;
   margin-bottom: calc(var(--large-size)* 3.5);
