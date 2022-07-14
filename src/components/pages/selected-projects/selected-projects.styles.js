@@ -16,6 +16,9 @@ export const SelectedProjectRow = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: calc(var(--large-size)* 3.5);
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   :hover {
     > * > * {
       /* opacity: .5; */
@@ -29,4 +32,13 @@ export const SelectedProjectRow = styled.div`
       /* filter: sepia(100%) saturate(300%) brightness(70%) hue-rotate(180deg); */
     }
   }
+`
+
+export const SelectedProjectColumn = styled.div`
+  grid-column-start: ${props => props.columnStart};
+  grid-column-end: ${props => props.columnEnd};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `

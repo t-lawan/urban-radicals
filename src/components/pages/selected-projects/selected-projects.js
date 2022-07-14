@@ -1,5 +1,5 @@
 import React from "react"
-import { SelectedProjectRow, SelectedProjectsWrapper } from "./selected-projects.styles"
+import { SelectedProjectColumn, SelectedProjectRow, SelectedProjectsWrapper } from "./selected-projects.styles"
 import PropTypes  from "prop-types"
 import ProjectList from "../../project-list/project-list"
 import { generateContentBlock } from "../../../utils/richtext"
@@ -11,8 +11,13 @@ const SelectedProjects = (props) => {
     <SelectedProjectsWrapper>
       {selectedProjectsArray.map((project, index) => (
         <SelectedProjectRow colour={project.project.getCategoryColour()} key={index}>
-          {generateContentBlock(project.leftColumnImage)}
-          {generateContentBlock(project.rightColumnImage)}
+          <SelectedProjectColumn columnStart={1} columnEnd={2}>
+            {generateContentBlock(project.leftColumnImage)}
+
+          </SelectedProjectColumn>
+          <SelectedProjectColumn columnStart={2} columnEnd={5} >
+            {generateContentBlock(project.rightColumnImage)}
+          </SelectedProjectColumn>
         </SelectedProjectRow>
       ))}
     </SelectedProjectsWrapper>
