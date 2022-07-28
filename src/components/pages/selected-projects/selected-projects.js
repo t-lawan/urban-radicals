@@ -1,31 +1,27 @@
 import React from "react"
-import { SelectedProjectColumn, SelectedProjectRow, SelectedProjectsWrapper } from "./selected-projects.styles"
-import PropTypes  from "prop-types"
+import {
+  SelectedProjectColumn,
+  SelectedProjectRowWrapper,
+  SelectedProjectsWrapper,
+} from "./selected-projects.styles"
+import PropTypes from "prop-types"
 import ProjectList from "../../project-list/project-list"
-import { generateContentBlock } from "../../../utils/richtext"
+import { generateContentBlock, IMAGE_LAYOUT } from "../../../utils/richtext"
+import SelectedProjectRow from "./selected-project-row/selected-project-row"
 
-const SelectedProjects = (props) => {
-
-  let selectedProjectsArray = props.projects;
+const SelectedProjects = props => {
+  const selectedProjectsArray = props.projects;
   return (
     <SelectedProjectsWrapper>
       {selectedProjectsArray.map((project, index) => (
-        <SelectedProjectRow colour={project.project.getCategoryColour()} key={index}>
-          <SelectedProjectColumn columnStart={1} columnEnd={2}>
-            {generateContentBlock(project.leftColumnImage)}
-
-          </SelectedProjectColumn>
-          <SelectedProjectColumn columnStart={2} columnEnd={5} >
-            {generateContentBlock(project.rightColumnImage)}
-          </SelectedProjectColumn>
-        </SelectedProjectRow>
+        <SelectedProjectRow project={project} key={index} />
       ))}
     </SelectedProjectsWrapper>
   )
 }
 
 SelectedProjects.propTypes = {
-	projects: PropTypes.arrayOf(PropTypes.object).isRequired,
-  }
+  projects: PropTypes.arrayOf(PropTypes.object).isRequired,
+}
 
 export default SelectedProjects

@@ -22,6 +22,17 @@ export const richTextOptions = {
   },
 }
 
+export const renderText = (rawText) => {
+  return (
+    <TextBlock>
+    {documentToReactComponents(
+      JSON.parse(rawText),
+      richTextOptions
+    )}
+  </TextBlock>
+  )
+}
+
 export const generateContentBlock = (block, index) => {
   switch (block.type) {
     case ContentBoxType.TEXT_BLOCK:
@@ -225,7 +236,7 @@ const ImageCaption = styled.div`
   padding: calc((var(--large-size) * 3) / 4) 0;
 `
 
-const IMAGE_LAYOUT = {
+export const IMAGE_LAYOUT = {
   DOCUMENTATION_SELECTED_PROJECT: "DOCUMENTATION_SELECTED_PROJECT",
   DOCUMENTATION_IMAGE: "DOCUMENTATION_IMAGE",
   FULL_WIDTH: "FULL_WIDTH",
