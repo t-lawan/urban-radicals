@@ -14,7 +14,7 @@ import {
 } from "../../../../utils/richtext"
 
 const SelectedProjectRow = props => {
-  const [isHovering, SetIsHovering] = useState(true)
+  const [isHovering, SetIsHovering] = useState(false)
 
   const project = props.project
   console.log("PRO", project)
@@ -45,9 +45,18 @@ const SelectedProjectRow = props => {
     // if project right column image is 0
   }
 
+  const onMouseEnter = () => {
+    SetIsHovering(true);
+
+  }
+
+  const onMouseLeave = () => {
+    SetIsHovering(false);
+}
+
   return (
-    <SelectedProjectRowDiv>
-      <SelectedProjectRowWrapper colour={project.project.getCategoryColour()}>
+    <SelectedProjectRowDiv onMouseOver={() => onMouseEnter()} onMouseLeave={() => onMouseLeave()}>
+      <SelectedProjectRowWrapper  colour={project.project.getCategoryColour()}>
         <SelectedProjectColumn
           columnStart={getColumnDetails(project).firstColumnStart}
           columnEnd={getColumnDetails(project).firstColumnEnd}
@@ -61,7 +70,7 @@ const SelectedProjectRow = props => {
           {generateContentBlock(project.rightColumnImage)}
         </SelectedProjectColumn>
       </SelectedProjectRowWrapper>
-      {isHovering ? <SelectedProjectText>{renderText(project.project.description)}</SelectedProjectText> : null}
+      {isHovering ? <SelectedProjectText colour={project.project.getCategoryColour()}>{renderText(project.project.description)}</SelectedProjectText> : null}
     </SelectedProjectRowDiv>
   )
 }

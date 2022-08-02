@@ -14,7 +14,6 @@ export const SelectedProjectRowItemWrapper = styled.div`
 export const SelectedProjectRowDiv = styled.div`
   margin-bottom: calc(var(--large-size) * 3.5);
   position: relative;
-
 `
 export const SelectedProjectRowWrapper = styled.div`
   flex-direction: row;
@@ -29,8 +28,8 @@ export const SelectedProjectRowWrapper = styled.div`
 
   :hover {
     picture > img {
-      background-color: ${props => props.colour} !important;;
-      /* filter: sepia(100%) saturate(300%) brightness(70%) hue-rotate(180deg); */
+      background-color: ${props => props.colour} !important;
+      filter: sepia(100%) saturate(300%) brightness(70%) hue-rotate(180deg);
       opacity: 0.5;
     }
     p {
@@ -46,11 +45,22 @@ export const SelectedProjectRowWrapper = styled.div`
 `
 
 export const SelectedProjectText = styled.div`
-  width: 100%;
-  height: 100%;
+  /* width: 100%;
+  height: 100%; */
+  * {
+    color: ${props => props.colour} !important;
+    font-size: var(--large-size);
+  }
+
   position: absolute;
   top: 50%;
-
+  left: 0;
+  right: 0;
+  text-align: center;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
 `
 export const SelectedProjectColumn = styled.div`
   grid-column-start: ${props => props.columnStart};
