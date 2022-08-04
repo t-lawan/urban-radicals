@@ -28,12 +28,13 @@ export const SelectedProjectRowWrapper = styled.div`
 
   :hover {
     * div.gatsby-image-wrapper {
-      background-color: green;
+      /* background-color: green; */
       border-color: ${props => props.colour} !important;
     }
     picture > img {
       background-color: ${props => props.colour} !important;
-      filter: sepia(100%) saturate(300%) brightness(70%) hue-rotate(180deg);
+      ${props => props.filter};
+      /* filter: sepia(100%) saturate(300%) brightness(70%) hue-rotate(180deg); */
       opacity: 0.5;
     }
     p {

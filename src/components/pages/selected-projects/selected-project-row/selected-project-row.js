@@ -12,6 +12,7 @@ import {
   IMAGE_LAYOUT,
   renderText,
 } from "../../../../utils/richtext"
+import { ColourManager } from "../../../../utils/colour-manager"
 
 const SelectedProjectRow = props => {
   const [isHovering, SetIsHovering] = useState(false)
@@ -56,7 +57,7 @@ const SelectedProjectRow = props => {
 
   return (
     <SelectedProjectRowDiv onMouseOver={() => onMouseEnter()} onMouseLeave={() => onMouseLeave()}>
-      <SelectedProjectRowWrapper colour={project.project.getCategoryColour()}>
+      <SelectedProjectRowWrapper filter={ColourManager.convertHexToFilter(project.project.getCategoryColour())}  colour={project.project.getCategoryColour()}>
         <SelectedProjectColumn
           columnStart={getColumnDetails(project).firstColumnStart}
           columnEnd={getColumnDetails(project).firstColumnEnd}
