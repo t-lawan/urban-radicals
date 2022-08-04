@@ -150,6 +150,9 @@ export const generateImageBlock = (block, index) => {
   return (
     <ImageWrapper width={width} height={height} key={index}>
       {image_content}
+      {/* <Overlay>
+        <p> HI </p>
+      </Overlay> */}
       {block.text ? (
         <ImageCaption>
           {documentToReactComponents(
@@ -220,6 +223,7 @@ const ThreeColumnLandscapeWrapper = styled.div`
 `
 
 const ImageWrapper = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
