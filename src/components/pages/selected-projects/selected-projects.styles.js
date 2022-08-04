@@ -28,28 +28,26 @@ export const SelectedProjectRowWrapper = styled.div`
 
   :hover {
     * div.gatsby-image-wrapper {
-      /* background-color: green; */
       border-color: ${props => props.colour} !important;
-    }
-    picture > img {
-      background-color: ${props => props.colour} !important;
-      ${props => props.filter};
-      /* filter: sepia(100%) saturate(300%) brightness(70%) hue-rotate(180deg); */
-      opacity: 0.5;
+      &:after {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color:  ${props => props.colour};
+        opacity: 0.5;
+        top: 0;
+        left: 0;
+        display: block;
+        content: "";
+      }
     }
     p {
       color: ${props => props.colour} !important;
-    }
-
-    > * {
-      opacity: 0.5;
     }
   }
 `
 
 export const SelectedProjectText = styled.div`
-  /* width: 100%;
-  height: 100%; */
   * {
     color: ${props => props.colour} !important;
     font-size: var(--large-size);
