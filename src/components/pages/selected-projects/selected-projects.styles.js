@@ -27,6 +27,10 @@ export const SelectedProjectRowWrapper = styled.div`
   grid-template-columns: repeat(5, 1fr);
 
   :hover {
+    * div.gatsby-image-wrapper {
+      background-color: green;
+      border-color: ${props => props.colour} !important;
+    }
     picture > img {
       background-color: ${props => props.colour} !important;
       filter: sepia(100%) saturate(300%) brightness(70%) hue-rotate(180deg);
@@ -38,8 +42,6 @@ export const SelectedProjectRowWrapper = styled.div`
 
     > * {
       opacity: 0.5;
-      /* color: ${props => props.colour} !important; */
-      /* filter: sepia(100%) saturate(300%) brightness(70%) hue-rotate(180deg); */
     }
   }
 `

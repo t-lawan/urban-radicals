@@ -56,7 +56,7 @@ const SelectedProjectRow = props => {
 
   return (
     <SelectedProjectRowDiv onMouseOver={() => onMouseEnter()} onMouseLeave={() => onMouseLeave()}>
-      <SelectedProjectRowWrapper  colour={project.project.getCategoryColour()}>
+      <SelectedProjectRowWrapper colour={project.project.getCategoryColour()}>
         <SelectedProjectColumn
           columnStart={getColumnDetails(project).firstColumnStart}
           columnEnd={getColumnDetails(project).firstColumnEnd}
