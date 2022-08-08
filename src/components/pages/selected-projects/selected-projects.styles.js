@@ -49,7 +49,7 @@ export const SelectedProjectRowWrapper = styled.div`
 
 export const SelectedProjectText = styled.div`
   * {
-    color: ${props => props.colour} !important;
+    /* color: ${props => props.colour} !important; */
     font-size: var(--large-size);
   }
 
