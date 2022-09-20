@@ -17,20 +17,31 @@ import { ColourManager } from "../../../../utils/colour-manager"
 const SelectedProjectRow = props => {
   const [isHovering, SetIsHovering] = useState(false)
 
-  const project = props.project
-  console.log("PRO", project)
+  const project = props.project;
+
   const DocumentationLeft = {
     firstColumnStart: 1,
     firstColumnEnd: 2,
     secondColumnStart: 2,
-    secondColumnEnd: 6,
+    secondColumnEnd: 5,
   }
 
   const DocumentationRight = {
     firstColumnStart: 1,
-    firstColumnEnd: 4,
-    secondColumnStart: 4,
-    secondColumnEnd: 6,
+    firstColumnEnd: 3
+    ,
+    secondColumnStart: 3,
+    secondColumnEnd: 5,
+  }
+
+  project.leftColumnImage = {
+    ...project.leftColumnImage,
+    isSelectedProject: true
+  }
+
+  project.rightColumnImage = {
+    ...project.rightColumnImage,
+    isSelectedProject: true
   }
 
   const getColumnDetails = project => {

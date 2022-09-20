@@ -33,6 +33,10 @@ export const renderText = (rawText) => {
   )
 }
 
+const isImagePortrait = (gatsbyImageData) => {
+  return gatsbyImageData.height > gatsbyImageData.width
+}
+
 export const generateContentBlock = (block, index) => {
   switch (block.type) {
     case ContentBoxType.TEXT_BLOCK:
@@ -76,7 +80,11 @@ export const generateImageBlock = (block, index) => {
       image_content = <DocumentationImage image={image} alt={"IMAGE"} />
       break
     case IMAGE_LAYOUT.DOCUMENTATION_SELECTED_PROJECT:
+      console.log('c', block)
       width = "50%"
+      if(isImagePortrait(block.images[0].gatsbyImageData)){
+        width = '90%';
+      }
       image_content = (
         <DocumentationImage image={getImage(block.images[0])} alt={"IMAGE"} />
       )
@@ -105,6 +113,9 @@ export const generateImageBlock = (block, index) => {
       break
     case IMAGE_LAYOUT.FULL_PORTRAIT:
       height = "100%"
+      if(block.isSelectedProject){
+        width = '80%'
+      }
       image_content = (
         <FullPortrait image={getImage(block.images[0])} alt={"IMAGE"} />
       )
@@ -147,6 +158,7 @@ export const generateImageBlock = (block, index) => {
         </TwoColumnWrapper>
       )
   }
+
   return (
     <ImageWrapper width={width} height={height} key={index}>
       {image_content}
@@ -230,6 +242,7 @@ const ImageWrapper = styled.div`
   justify-content: center;
   width: ${props => props.width};
   margin-top: calc(var(--large-size));
+  /* padding: ${props => props.padding ? 'calc(3 *var(--large-size))' : null} */
 `
 
 const ImageCollectionItemWrapper = styled.div``
