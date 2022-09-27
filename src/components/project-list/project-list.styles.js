@@ -18,6 +18,8 @@ export const ProjectListRow = styled.div`
     }
 `
 
+
+
 export const ProjectListRowText = styled.p`
     /* :hover {
         color: ${props => props.colour};

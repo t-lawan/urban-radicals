@@ -29,12 +29,19 @@ export const SelectedProjectRowWrapper = styled.div`
   :hover {
     * div.gatsby-image-wrapper {
       border-color: ${props => props.colour} !important;
+
+      img {
+        -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+         filter: grayscale(100%);
+      }
+      /* filter: grayscale(100%); */
+
       &:after {
         position: absolute;
         height: 100%;
         width: 100%;
         background-color:  ${props => props.colour};
-        opacity: 0.5;
+        opacity: 0.7;
         top: 0;
         left: 0;
         display: block;
@@ -53,7 +60,7 @@ export const SelectedProjectText = styled.div`
   }
 
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 0;
   right: 0;
   text-align: center;

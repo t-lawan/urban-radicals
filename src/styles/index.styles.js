@@ -11,6 +11,12 @@ export const size = {
   desktop: "2500px",
 }
 
+
+export const BaselineText = styled.span`
+  vertical-align: -4.25pt;
+
+`
+
 export const GlobalStyle = createGlobalStyle`
 
 @font-face {
@@ -120,6 +126,7 @@ line-height: 1.15;
 font-style: normal;
 color: black;
 font-size: var(--medium-size-desktop);
+font-weight: bold;
   @media screen and (max-width: ${size.mobileL}) {
     font-size: var(--medium-size-mobile);
   }

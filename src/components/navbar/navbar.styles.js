@@ -7,6 +7,8 @@ export const NavbarLink = styled(Link)`
     text-decoration: none;
     vertical-align: ${props => props.selected ? "text-top": "baseline"};
     font-weight: 600;
+    font-size: var(--large-size);
+
 `
 
 export const NavbarWrapper = styled.div`

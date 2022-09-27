@@ -6,6 +6,7 @@ import {
   ProjectListWrapper,
 } from "./project-list.styles"
 import { PageMap } from "../../utils/page-config"
+import { BaselineText } from "../../styles/index.styles"
 
 const ProjectList = props => {
   let projects = props.projects
@@ -19,7 +20,7 @@ const ProjectList = props => {
         <ProjectLink key={index} to={`${PageMap.PROJECT.slug}/${project.slug}`}>
           <ProjectListRow  colour={project.getCategoryColour()}>
             <p>{project.getCategory().toLowerCase()}</p>
-            <p>{`${project.title}, ${
+            <p> <BaselineText>{`${project.title}`}</BaselineText>{`, ${
               project.location
             }, ${project.getYear()}`}</p>
           </ProjectListRow>

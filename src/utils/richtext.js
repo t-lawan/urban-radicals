@@ -9,9 +9,14 @@ import ImageCollectionItem from "../components/image-collection-item/image-colle
 import { size } from "../styles/index.styles"
 
 const EXTERNALLINK = styled.a``
+const CODE = styled.code`
+  font-family: inherit;
+  vertical-align: -4.25pt;
+`
 export const richTextOptions = {
   renderMark: {
     [MARKS.BOLD]: text => <strong>{text}</strong>,
+    [MARKS.CODE]: text => <CODE> {text} </CODE>
   },
   renderNode: {
     [INLINES.HYPERLINK]: (node, children) => (
