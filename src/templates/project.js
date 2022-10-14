@@ -10,7 +10,7 @@ const ProjectTemplate = props => {
   const project = Convert.toProjectModel(props.pageContext)
 
   return (
-    <Layout>
+    <Layout showJumbotronText={false} showNavbar={false}>
       <Seo {...project.seo} />
       <ProjectPage project={project} />
     </Layout>

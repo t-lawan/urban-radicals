@@ -9,14 +9,15 @@ import ImageCollectionItem from "../components/image-collection-item/image-colle
 import { size } from "../styles/index.styles"
 
 const EXTERNALLINK = styled.a``
-const CODE = styled.code`
+export const CODE = styled.code`
   font-family: inherit;
   vertical-align: -4.25pt;
+  text-transform: uppercase;
 `
 export const richTextOptions = {
   renderMark: {
     [MARKS.BOLD]: text => <strong>{text}</strong>,
-    [MARKS.CODE]: text => <CODE> {text} </CODE>
+    [MARKS.CODE]: text => <CODE> { text } </CODE>
   },
   renderNode: {
     [INLINES.HYPERLINK]: (node, children) => (
@@ -78,6 +79,7 @@ export const generateImageBlock = (block, index) => {
   let image_content
   let width = "100%"
   let height = "auto"
+  let captionWidth = "100%";
   switch (block.image_layout) {
     case IMAGE_LAYOUT.DOCUMENTATION_IMAGE:
       let image = getImage(block.images[0])
@@ -118,6 +120,7 @@ export const generateImageBlock = (block, index) => {
       break
     case IMAGE_LAYOUT.FULL_PORTRAIT:
       height = "100%"
+      captionWidth = '60%'
       if(block.isSelectedProject){
         width = '80%'
       }
@@ -127,6 +130,7 @@ export const generateImageBlock = (block, index) => {
       break
     case IMAGE_LAYOUT.THREE_COLUMN_LANDSCAPE:
       width = "100%"
+      captionWidth = "60%"
       image_content = (
         <ThreeColumnLandscapeWrapper>
           <ThreeColumnLandscape image={getImage(block.images[0])} alt={"IMAGE"} />
@@ -171,7 +175,7 @@ export const generateImageBlock = (block, index) => {
         <p> HI </p>
       </Overlay> */}
       {block.text ? (
-        <ImageCaption>
+        <ImageCaption width={captionWidth}>
           {documentToReactComponents(
             JSON.parse(block.text.raw),
             richTextOptions
@@ -253,9 +257,11 @@ const ImageWrapper = styled.div`
 const ImageCollectionItemWrapper = styled.div``
 
 const ImageCaption = styled.div`
-  align-self: flex-start;
+  /* align-self: flex-start; */
   padding: 21px 0;
   padding: calc((var(--large-size) * 3) / 4) 0;
+  width: ${props => props.width};
+
 `
 
 export const IMAGE_LAYOUT = {

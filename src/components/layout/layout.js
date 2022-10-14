@@ -13,7 +13,7 @@ const Layout = props => {
       <GlobalStyle />
       <Modal />
       {props.showJumbotronText ? <Jumbotron /> : null}
-      <Navbar />
+      {props.showNavbar ? <Navbar /> : null}
       <MainWrapper> {props.children} </MainWrapper>
     </LayoutWrapper>
   )
@@ -21,11 +21,13 @@ const Layout = props => {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  showJumbotronText: PropTypes.bool
+  showJumbotronText: PropTypes.bool,
+  showNavbar: PropTypes.bool
 }
 
 Layout.defaultProps = {
-	showJumbotronText: true
+	showJumbotronText: true,
+  showNavbar: true
 };
 
 export default Layout
