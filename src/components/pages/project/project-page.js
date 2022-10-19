@@ -13,6 +13,7 @@ const ProjectPage = (props) => {
 			<ProjectPageHeader> 
 				<BackButton to={'/projects'}>back </BackButton>   
 				<ProjectPageTitle> <CODE>{project.title}</CODE>, {project.location}, {project.getYear()}  </ProjectPageTitle>
+				<p></p>
 			</ProjectPageHeader>
      		{project.content.map((block, index) => generateContentBlock(block, index))}
 			<ProjectFooter {...project.footer} />
