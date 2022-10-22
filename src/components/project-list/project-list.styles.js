@@ -1,5 +1,6 @@
 import { Link } from 'gatsby';
 import styled from 'styled-components';
+import { size } from '../../styles/index.styles';
 
 export const ProjectLink = styled(Link)`
     text-decoration: none;
@@ -9,13 +10,22 @@ export const ProjectLink = styled(Link)`
 
 export const ProjectListRow = styled.div`
     display:grid;
-    grid-template-columns: 1fr 8fr;
+    grid-template-columns: 1fr 7fr;
     width: 100%;
     :hover {
         > * {
             color: ${props => props.colour} !important;
         }
     }
+
+    @media (max-width: ${size.laptop}) {
+        grid-template-columns: 1fr 5fr;
+    }
+
+    @media screen and (max-width: ${size.tablet}) {
+        grid-template-columns: 1fr 1fr;
+    }
+    
 `
 
 

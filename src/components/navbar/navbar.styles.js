@@ -8,7 +8,10 @@ export const NavbarLink = styled(Link)`
     vertical-align: ${props => props.selected ? "text-top": "baseline"};
     font-weight: 600;
     font-size: var(--large-size);
-
+    @media screen and (max-width: ${size.tablet}) {
+        font-size: var(--medium-size);
+        text-align: center;
+  }
 `
 
 export const NavbarWrapper = styled.div`

@@ -8,7 +8,11 @@ import { Convert } from "./convert"
 import ImageCollectionItem from "../components/image-collection-item/image-collection-item"
 import { size } from "../styles/index.styles"
 
-const EXTERNALLINK = styled.a``
+const EXTERNALLINK = styled.a`
+  text-decoration: none;
+  text-transform: uppercase;
+  vertical-align: -4.25pt;
+`
 export const CODE = styled.code`
   font-family: inherit;
   vertical-align: -4.25pt;

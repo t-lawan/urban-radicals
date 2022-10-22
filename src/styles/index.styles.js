@@ -27,17 +27,17 @@ export const GlobalStyle = createGlobalStyle`
 
 :root {
   --large-size: 34px;
-  @media screen and (max-width: ${size.mobileL}) {
+  @media screen and (max-width: ${size.tablet}) {
     --large-size: 28px;
   }
 
   --medium-size: 24px;
-  @media screen and (max-width: ${size.mobileL}) {
+  @media screen and (max-width: ${size.tablet}) {
     --medium-size: 22px;
   }
 
   --small-size: 16px;
-  @media screen and (max-width: ${size.mobileL}) {
+  @media screen and (max-width: ${size.tablet}) {
     --small-size: 14px;
   }
 
