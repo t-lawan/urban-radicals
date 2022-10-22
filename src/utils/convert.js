@@ -14,9 +14,6 @@ export class Convert {
 			content.push(this.toContentModel(content_block));
 		})
 
-		console.log(contentfulModel)
-
-
 		let footer = {
 			firstColumn: Convert.toContentModel(contentfulModel.footer.firstColumnText),
 			secondColumn: Convert.toContentModel(contentfulModel.footer.secondColumnText),

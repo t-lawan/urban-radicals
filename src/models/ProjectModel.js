@@ -38,7 +38,6 @@ export class ProjectModel {
     }
 
     getYear = () => {
-        console.log(this.date)
         return new Date(this.date).getFullYear()
     }
 }

@@ -87,7 +87,6 @@ export const generateImageBlock = (block, index) => {
       image_content = <DocumentationImage image={image} alt={"IMAGE"} />
       break
     case IMAGE_LAYOUT.DOCUMENTATION_SELECTED_PROJECT:
-      console.log('c', block)
       width = "50%"
       if(isImagePortrait(block.images[0].gatsbyImageData)){
         width = '90%';

@@ -7,7 +7,6 @@ import ProjectFooter from './project-footer';
 
 const ProjectPage = (props) => {
 	let project = props.project;
-	console.log('project', project)
 	return (
 		<ProjectPageWrapper>
 			<ProjectPageHeader> 
