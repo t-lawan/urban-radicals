@@ -9,7 +9,7 @@ export const ProjectLink = styled(Link)`
 
 export const ProjectListRow = styled.div`
     display:grid;
-    grid-template-columns: 2fr 6fr;
+    grid-template-columns: 1fr 8fr;
     width: 100%;
     :hover {
         > * {
